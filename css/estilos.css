@@ -1,0 +1,7 @@
+/* Estilos para la el header*/
+.gris {
+    background: rgba(0, 0, 0, 0.6);
+}
+.top-nav-collapse {
+    background: rgba(0, 0, 0, 0.9) !important;
+}
