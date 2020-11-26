@@ -46,6 +46,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Registrarse</a>
                 </li>
+                <!-- Esta liga es temporal -->
+                <li class="nav-item">
+                    <a class="nav-link" href="panelprincipal/dist.php">Cruds (temporal)</a>
+                </li>
             </ul>
             </div>
             <!-- Boton Estilo Noche/Dark -->
