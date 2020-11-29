@@ -9,7 +9,7 @@
 	$contraseña=(isset($_POST['password'])) ? $_POST['password'] : '';
 
 	$contra = md5($contraseña);
-	$consulta="SELECT Usuario, Password FROM `employees` WHERE Usuario='$usuario' AND Password='$contra'";
+	$consulta="SELECT Usuario, Password FROM employees WHERE Usuario='$usuario' AND Password='$contra'";
 	$resultado=$conexion -> prepare($consulta);
 	$resultado->execute();
 

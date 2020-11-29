@@ -1,4 +1,4 @@
-('#IntentarIngresar').submit(function(e)
+$('#IntentarIngresar').submit(function(e)
 {
 	e.preventDefault();
 	var usuario=$.trim($("#usuario-ini").val());
@@ -25,7 +25,7 @@
 				{
 					Swal.fire({
 						type:'error',
-						title:'Usuario y/o contraseña incorrecta',
+						title:'Usuario y/o contraseña incorrecto',
 					});
 				}
 				else
@@ -39,7 +39,7 @@
 					}).then((result)=>{
 						if(result.value)
 						{
-							window.location.href="index.php";
+							window.location.href="panelprincipal/dist.php";
 						}
 					})
 				}

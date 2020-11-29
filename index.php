@@ -18,6 +18,8 @@
     <!-- FontAwesome CSS -->
 	<link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+    <!-- Sweet Alert -->
+    <link rel="stylesheet" href="sweetalert/sweetalert2.min.css">
     <!-- Estilos CSS -->
     <link rel="stylesheet" href="css/estilos.css">
 </head>
@@ -88,6 +90,10 @@
     </section>
 
     <!-- Codigos JS -->
+    <script src="jquery/jquery-3.5.0.min.js"></script>
+    <script src="sweetalert/sweetalert2.all.min.js"></script>
+    <script src="popper/popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="javascript/validar-ingresar.js"></script>
 </body>
 </html>
