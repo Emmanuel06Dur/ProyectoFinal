@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -18,6 +18,8 @@
     <!-- FontAwesome CSS -->
 	<link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+    <!-- Sweet Alert -->
+    <link rel="stylesheet" href="sweetalert/sweetalert2.min.css">
     <!-- Estilos CSS -->
     <link rel="stylesheet" href="css/estilos.css">
 </head>
@@ -41,10 +43,7 @@
                     <a class="nav-link" href="index.php">Inicio <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Iniciar Sesión</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Registrarse</a>
+                    <a class="nav-link" href="#iniciarsesionaqui">Iniciar Sesión</a>
                 </li>
                 <!-- Esta liga es temporal -->
                 <li class="nav-item">
@@ -64,5 +63,37 @@
             </form>
         </div>
     </nav>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <a name="iniciarsesionaqui"></a>
+    <section class="iniciarsesion" id="inisi">
+        <div id="parallax-inise">
+            <div class="opacidad">
+                <div id="texto">
+                    <form method="post" id="IntentarIngresar">
+                        <a>Iniciar sesion</a>
+
+                        <div class="wrap-input100">
+                            <input class="input100" type="text" id="usuario-ini" name="usuario-ini" placeholder="Usuario">
+                        </div>
+                        <div class="wrap-input100">
+                            <input class="input100" type="password" id="contraseña-ini" name="contraseña-ini" placeholder="Contraseña">
+                        </div>
+                        <button type="submit" name="submit" class="btn btn-success" id="button-submit">Ingresar</button>
+                    </form>
+                </div>
+            </div>
+         </div>
+    </section>
+
+    <!-- Codigos JS -->
+    <script src="jquery/jquery-3.5.0.min.js"></script>
+    <script src="sweetalert/sweetalert2.all.min.js"></script>
+    <script src="popper/popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="javascript/validar-ingresar.js"></script>
 </body>
 </html>
