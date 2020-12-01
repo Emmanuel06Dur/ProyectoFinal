@@ -41,7 +41,7 @@
                         <a class="dropdown-item" href="#">Actividad Reciente</a>
                         <div class="dropdown-divider"></div>
                         <!-- Vinculo al login (logout)-->
-                        <a class="dropdown-item" href="../index.php">Cerrar Sesión</a>
+                        <a class="dropdown-item" href="../index.php">Regresar</a>
                     </div>
                 </li>
             </ul>
@@ -105,7 +105,6 @@
                                         <nav class="sb-sidenav-menu-nested nav">
                                             <a class="nav-link" href="#">Reporte I</a>
                                             <a class="nav-link" href="#">Reporte II</a>
-                                            <a class="nav-link" href="#">Reporte III</a>
                                         </nav>
                                     </div>
                                 </nav>
@@ -120,7 +119,7 @@
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small">Editado y programado por:</div>
-                        Equipo 3
+                        Equipo 2
                     </div>
                 </nav>
             </div>

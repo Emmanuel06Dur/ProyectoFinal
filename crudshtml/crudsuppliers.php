@@ -106,7 +106,6 @@
                                         <nav class="sb-sidenav-menu-nested nav">
                                             <a class="nav-link" href="#">Reporte I</a>
                                             <a class="nav-link" href="#">Reporte II</a>
-                                            <a class="nav-link" href="#">Reporte III</a>
                                         </nav>
                                     </div>
                                 </nav>
@@ -121,7 +120,7 @@
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small">Editado y programado por:</div>
-                        Equipo 3
+                        Equipo 2
                     </div>
                 </nav>
             </div>
@@ -178,7 +177,7 @@
                                                 <td>{{sup.HomePage}}</td>
                                                 <td>
 									                <div class = "btn-group" role = "group">
-										                <button class = "btn btn-secondary" title = "Editar" @click = "btnEditar()"><i class = "fas fa-pencil-alt"></i></button>
+										                <button class = "btn btn-secondary" title = "Editar" @click = "btnEditar(sup.SupplierID, sup.CompanyName, sup.ContactName, sup.ContactTitle, sup.Ubication, sup.City, sup.Region, sup.PostalCode, sup.Country, sup.Phone, sup.Fax, sup.HomePage)"><i class = "fas fa-pencil-alt"></i></button>
 										                <button class = "btn btn-danger" title = "Eliminar" @click = "btnBorrar(sup.SupplierID)"><i class = "fas fa-trash-alt"></i></button>
 									                </div>
 								                </td>

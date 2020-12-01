@@ -9,7 +9,7 @@
     $SupplierID = (isset($_POST['SupplierID'])) ? $_POST['SupplierID'] : '';
     $CompanyName = (isset($_POST['CompanyName'])) ? $_POST['CompanyName'] : '';
     $ContactName = (isset($_POST['ContactName'])) ? $_POST['ContactName'] : '';
-    $ContactFile = (isset($_POST['ContactFile'])) ? $_POST['ContactFile'] : '';
+    $ContactTitle = (isset($_POST['ContactTitle'])) ? $_POST['ContactTitle'] : '';
     $Address = (isset($_POST['Address'])) ? $_POST['Address'] : '';
     $City = (isset($_POST['City'])) ? $_POST['City'] : '';
     $Region = (isset($_POST['Region'])) ? $_POST['Region'] : '';
@@ -20,18 +20,18 @@
     $HomePage = (isset($_POST['HomePage'])) ? $_POST['HomePage'] : '';
     switch ($opcion){
 		case 1: //Alta
-			$consulta = "INSERT INTO tablename () VALUES () ";
+			$consulta = "INSERT INTO suppliers (CompanyName, ContactName, ContactTitle, Ubication, City, Region, PostalCode, Country, Phone, Fax, HomePage) VALUES ('$CompanyName', '$ContactName', '$ContactTitle', '$Address', '$City', '$Region', '$PostalCode', '$Country', '$Phone', '$Fax', '$HomePage') ";
 			$resultado = $conexion -> prepare($consulta);
 			$resultado -> execute();
 			break;
 		case 2: //Modificar
-			$consulta = "UPDATE tablename SET nombre = '' WHERE id = '$SupplierID' ";
+			$consulta = "UPDATE suppliers SET CompanyName = '$CompanyName', ContactName='$ContactName', ContactTitle='$ContactTitle', Ubication='$Address', City='$City', Region='$Region', PostalCode='$PostalCode', Country='$Country', Phone='$Phone', Fax='$Fax', HomePage='$HomePage' WHERE SupplierID = '$SupplierID' ";
 			$resultado = $conexion -> prepare($consulta);
 			$resultado -> execute();
 			$data = $resultado->fetchAll(PDO::FETCH_ASSOC);
 			break;
 		case 3: //Borrar
-			$consulta = "DELETE FROM tablename WHERE id = '$SupplierID' ";
+			$consulta = "DELETE FROM suppliers WHERE SupplierID = '$SupplierID' ";
 			$resultado = $conexion -> prepare($consulta);
 			$resultado -> execute();
 			break;

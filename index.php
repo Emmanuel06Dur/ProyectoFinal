@@ -42,20 +42,12 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="index.php">Inicio <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#iniciarsesionaqui">Iniciar Sesión</a>
-                </li>
                 <!-- Esta liga es temporal -->
                 <li class="nav-item">
-                    <a class="nav-link" href="panelprincipal/dist.php">Cruds (temporal)</a>
+                    <a class="nav-link" href="panelprincipal/dist.php">Datos Principales</a>
                 </li>
             </ul>
             </div>
-            <!-- Boton Estilo Noche/Dark -->
-            <!--button class="switch" id="switch">
-                <span><i class="fas fa-sun"></i></span>
-                <span><i class="fas fa-moon"></i></span>
-            </button-->
             <!-- Formulario de Buscar -->
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar">
@@ -63,37 +55,6 @@
             </form>
         </div>
     </nav>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <a name="iniciarsesionaqui"></a>
-    <section class="iniciarsesion" id="inisi">
-        <div id="parallax-inise">
-            <div class="opacidad">
-                <div id="texto">
-                    <form method="post" id="IntentarIngresar">
-                        <a>Iniciar sesion</a>
 
-                        <div class="wrap-input100">
-                            <input class="input100" type="text" id="usuario-ini" name="usuario-ini" placeholder="Usuario">
-                        </div>
-                        <div class="wrap-input100">
-                            <input class="input100" type="password" id="contraseña-ini" name="contraseña-ini" placeholder="Contraseña">
-                        </div>
-                        <button type="submit" name="submit" class="btn btn-success" id="button-submit">Ingresar</button>
-                    </form>
-                </div>
-            </div>
-         </div>
-    </section>
-
-    <!-- Codigos JS -->
-    <script src="jquery/jquery-3.5.0.min.js"></script>
-    <script src="sweetalert/sweetalert2.all.min.js"></script>
-    <script src="popper/popper.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-    <script src="javascript/validar-ingresar.js"></script>
 </body>
 </html>
