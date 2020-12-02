@@ -99,13 +99,13 @@
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                    Principales Reportes
+                                    Reportes Principales
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
                                     <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
                                         <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="#">Reporte I</a>
-                                            <a class="nav-link" href="#">Reporte II</a>
+                                            <a class="nav-link" href="#">Reporte de Ordenes por Empleado y Mes</a>
+                                            <a class="nav-link" href="../reportes/reporte2.php">Reporte Cantidad de Productos Ordenados</a>
                                         </nav>
                                     </div>
                                 </nav>
@@ -140,7 +140,7 @@
                             <button @click="btnAlta" class="btn btn-primary" title="Nuevo"><i class="fas fa-parachute-box"></i>  Añadir Supplier</button><br><br>
                         </div>
                         <div class="card mb-4">
-                            <div class="card-header"><i class="fas fa-table mr-1"></i>Tabla de suppliers</div>
+                            <div class="card-header"><i class="fas fa-table mr-1"></i>Tabla de Suppliers</div>
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">

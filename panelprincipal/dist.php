@@ -98,13 +98,13 @@
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                    Principales Reportes
+                                    Reportes Principales
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
                                     <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
                                         <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="#">Reporte I</a>
-                                            <a class="nav-link" href="#">Reporte II</a>
+                                            <a class="nav-link" href="#">Reporte Ordenes por Empleado y Mes</a>
+                                            <a class="nav-link" href="../reportes/reporte2.php">Reporte Cantidad de Productos Ordenados</a>
                                         </nav>
                                     </div>
                                 </nav>
@@ -125,56 +125,62 @@
             </div>
 
             <!-- Dentro del dashboard (principal) -->
-
-            <!--
             <div id="layoutSidenav_content">
                 <main>
                 
                     <div class="container-fluid">
-                        <h1 class="mt-4">Registro de pacientes</h1>
+                        <h1 class="mt-4">Registro de Ordenes</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">Principal</li>
                         </ol>
-                        <div id="appPacientes">
+                        <div id="appOrders">
                         <div class="col">
-                            <button @click="btnAlta" class="btn btn-primary" title="Nuevo"><i class="fas fa-user-injured"></i>  Añadir Paciente</button><br><br>
+                            <button @click="btnAlta" class="btn btn-primary" title="Nuevo"><i class="fas fa-shipping-fast"></i>  Añadir Orden</button><br><br>
                         </div>
                         <div class="card mb-4">
-                            <div class="card-header"><i class="fas fa-table mr-1"></i>Tabla de Pacientes</div>
+                            <div class="card-header"><i class="fas fa-table mr-1"></i>Tabla de Ordenes</div>
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
-                                                <th>Id</th>
-                                                <th>Nombre</th>
-                                                <th>Apellidos</th>
-                                                <th>Edad</th>
-                                                <th>Enfermedad</th>
-                                                <th>Gravedad</th>
-                                                <th>Tratamiento</th>
-                                                <th>Hora</th>
-                                                <th>Cita</th>
-                                                <th>Doctor</th>
+                                                <th>OrderID</th>
+                                                <th>CustomerID</th>
+                                                <th>EmployeeID</th>
+                                                <th>OrderDate</th>
+                                                <th>RequiredDate</th>
+                                                <th>ShippedDate</th>
+                                                <th>ShipVia</th>
+                                                <th>Freight</th>
+                                                <th>ShipName</th>
+                                                <th>ShipAddress</th>
+                                                <th>ShipCity</th>
+                                                <th>ShipRegion</th>
+                                                <th>ShipPostalCode</th>
+                                                <th>ShipCountry</th>
                                                 <th>Acciones</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr v-for = "(paciente, indice) of pacientes">
-                                                <td>{{paciente.id}}</td>
-                                                <td>{{paciente.nombre}}</td>
-                                                <td>{{paciente.apellidos}}</td>
-                                                <td>{{paciente.edad}}</td>
-                                                <td>{{paciente.enfermedad}}</td>
-                                                <td>{{paciente.gravedad}}</td>
-                                                <td>{{paciente.tratamiento}}</td>
-                                                <td>{{paciente.hora}}</td>
-                                                <td>{{paciente.cita}}</td>
-                                                <td>{{paciente.doctor}}</td>
+                                            <tr v-for = "(orders, indice) of orders">
+                                                <td>{{orders.OrderID}}</td>
+                                                <td>{{orders.CustomerID}}</td>
+                                                <td>{{orders.EmployeeID}}</td>
+                                                <td>{{orders.OrderDate}}</td>
+                                                <td>{{orders.RequiredDate}}</td>
+                                                <td>{{orders.ShippedDate}}</td>
+                                                <td>{{orders.ShipVia}}</td>
+                                                <td>{{orders.Freight}}</td>
+                                                <td>{{orders.ShipName}}</td>
+                                                <td>{{orders.ShipAddress}}</td>
+                                                <td>{{orders.ShipCity}}</td>
+                                                <td>{{orders.ShipRegion}}</td>
+                                                <td>{{orders.ShipPostalCode}}</td>
+                                                <td>{{orders.ShipCountry}}</td>
                                                 <td>
 									                <div class = "btn-group" role = "group">
-										                <button class = "btn btn-secondary" title = "Editar" @click = "btnEditar(paciente.id, paciente.nombre, paciente.apellidos, paciente.edad, paciente.enfermedad, paciente.gravedad, paciente.tratamiento, paciente.hora, paciente.cita, paciente.doctor)"><i class = "fas fa-pencil-alt"></i></button>
-										                <button class = "btn btn-danger" title = "Eliminar" @click = "btnBorrar(paciente.id)"><i class = "fas fa-trash-alt"></i></button>
+										                <button class = "btn btn-secondary" title = "Editar" @click = "btnEditar()"><i class = "fas fa-pencil-alt"></i></button>
+										                <button class = "btn btn-danger" title = "Eliminar" @click = "btnBorrar(orders.OrderID)"><i class = "fas fa-trash-alt"></i></button>
 									                </div>
 								                </td>
                                             </tr>
@@ -186,12 +192,12 @@
                         </div>
                     </div>
                 
-                </main> -->
-                <!-- CopyRight
+                </main>
+                <!-- CopyRight -->
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; WebSite Hospital || 2020</div>
+                            <div class="text-muted">Copyright &copy; WebSite NWIND || 2020</div>
                             <div>
                                 <a href="#">Privacy Policy</a>
                                 &middot;
@@ -201,7 +207,7 @@
                     </div>
                 </footer>
             </div> 
-            --> 
+            
 
         </div>
         
@@ -216,8 +222,8 @@
         <!-- Sweetalert -->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
-        <!-- main.js -->
-        <script src=""></script>
+        <!-- maincrud.js -->
+        <script src="../javascript/crudorders.js"></script>
         
         <!-- Librerias -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>

@@ -1,5 +1,5 @@
 var url = "../bd/crudsuppliersDB.php";
-var appPacientes = new Vue({
+var appSuppliers = new Vue({
     el: "#appSuppliers",
     data:{
         suppliers: [],
