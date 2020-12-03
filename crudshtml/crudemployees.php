@@ -314,8 +314,8 @@
                                                 <td>{{emp.PhotoPath}}</td>
                                                 <td>
 									                <div class = "btn-group" role = "group">
-										                <button class = "btn btn-secondary" title = "Editar" @click = "btnEditar(sup.SupplierID, sup.CompanyName, sup.ContactName, sup.ContactTitle, sup.Ubication, sup.City, sup.Region, sup.PostalCode, sup.Country, sup.Phone, sup.Fax, sup.HomePage)"><i class = "fas fa-pencil-alt"></i></button>
-										                <button class = "btn btn-danger" title = "Eliminar" @click = "btnBorrar(sup.SupplierID)"><i class = "fas fa-trash-alt"></i></button>
+										                <button class = "btn btn-secondary" title = "Editar" @click = "btnEditar(emp.EmployeeID, emp.LastName, emp.FirstName, emp.Usuario, emp.Password, emp.Title, emp.TitleOfCourtesy, emp.BirthDate, emp.HireDate, emp.Adress, emp.City, emp.Region, emp.PostalCode, emp.Country, emp.HomePhone, emp.Extension, emp.Photo, emp.Notes, emp.ReportsTo, emp.PhotoPath)"><i class = "fas fa-pencil-alt"></i></button>
+										                <button class = "btn btn-danger" title = "Eliminar" @click = "btnBorrar(emp.EmployeeID)"><i class = "fas fa-trash-alt"></i></button>
 									                </div>
 								                </td>
                                             </tr>
@@ -358,7 +358,7 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
         <!-- maincrud.js -->
-        <script src="../javascript/crudsuppliers.js"></script>
+        <script src="../javascript/crudemployees.js"></script>
         
         <!-- Librerias de diseño -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
