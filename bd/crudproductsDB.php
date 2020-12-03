@@ -6,18 +6,16 @@
 	$_POST = json_decode(file_get_contents("php://input"), true);
 	//Recepción de los datos enviados mediante POST desde main.js
     $opcion = (isset($_POST['opcion'])) ? $_POST['opcion'] : '';
+    $ProductID = (isset($_POST['ProductID'])) ? $_POST['ProductID'] : '';
+    $ProductName = (isset($_POST['ProductName'])) ? $_POST['ProductName'] : '';
     $SupplierID = (isset($_POST['SupplierID'])) ? $_POST['SupplierID'] : '';
-    $CompanyName = (isset($_POST['CompanyName'])) ? $_POST['CompanyName'] : '';
-    $ContactName = (isset($_POST['ContactName'])) ? $_POST['ContactName'] : '';
-    $ContactFile = (isset($_POST['ContactFile'])) ? $_POST['ContactFile'] : '';
-    $Address = (isset($_POST['Address'])) ? $_POST['Address'] : '';
-    $City = (isset($_POST['City'])) ? $_POST['City'] : '';
-    $Region = (isset($_POST['Region'])) ? $_POST['Region'] : '';
-    $PostalCode = (isset($_POST['PostalCode'])) ? $_POST['PostalCode'] : '';
-    $Country = (isset($_POST['Country'])) ? $_POST['Country'] : '';
-    $Phone = (isset($_POST['Phone'])) ? $_POST['Phone'] : '';
-    $Fax = (isset($_POST['Fax'])) ? $_POST['Fax'] : '';
-    $HomePage = (isset($_POST['HomePage'])) ? $_POST['HomePage'] : '';
+    $CategoryID = (isset($_POST['CategoryID'])) ? $_POST['CategoryID'] : '';
+    $QuantityPerUnit = (isset($_POST['QuantityPerUnit'])) ? $_POST['QuantityPerUnit'] : '';
+    $UnitPrice = (isset($_POST['UnitPrice'])) ? $_POST['UnitPrice'] : '';
+    $UnitsInStock = (isset($_POST['UnitsInStock'])) ? $_POST['UnitsInStock'] : '';
+    $UnitsOnOrder = (isset($_POST['UnitsOnOrder'])) ? $_POST['UnitsOnOrder'] : '';
+    $ReoderLevel = (isset($_POST['ReoderLevel'])) ? $_POST['ReoderLevel'] : '';
+    $Discontinued = (isset($_POST['Phone'])) ? $_POST['Phone'] : '';
     switch ($opcion){
 		case 1: //Alta
 			$consulta = "INSERT INTO tablename () VALUES () ";
@@ -25,18 +23,18 @@
 			$resultado -> execute();
 			break;
 		case 2: //Modificar
-			$consulta = "UPDATE tablename SET nombre = '' WHERE id = '$SupplierID' ";
+			$consulta = "UPDATE tablename SET nombre = '' WHERE id = '$ProductID' ";
 			$resultado = $conexion -> prepare($consulta);
 			$resultado -> execute();
 			$data = $resultado->fetchAll(PDO::FETCH_ASSOC);
 			break;
 		case 3: //Borrar
-			$consulta = "DELETE FROM tablename WHERE id = '$SupplierID' ";
+			$consulta = "DELETE FROM tablename WHERE id = '$ProductID' ";
 			$resultado = $conexion -> prepare($consulta);
 			$resultado -> execute();
 			break;
 		case 4: //Listar
-			$consulta = "SELECT SupplierID, CompanyName, ContactName, ContactTitle, Ubication, City, Region, PostalCode, Country, Phone, Fax, HomePage FROM suppliers";
+			$consulta = "SELECT ProductID, ProductName, SupplierID, CategoryID, QuantityPerUnit, UnitPrice, UnitsInStock, UnitsOnOrder, ReoderLevel, Discontinued FROM products";
 			$resultado = $conexion -> prepare($consulta);
 			$resultado -> execute();
 			$data = $resultado -> fetchAll(PDO::FETCH_ASSOC);
