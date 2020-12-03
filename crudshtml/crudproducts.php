@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <link rel="icon" type="image/png" href="../img/inventario.png">
-        <title>Suppliers // NWIND</title>
+        <title>Products // NWIND</title>
         
         <link href="../panelprincipal/css/styles.css" rel="stylesheet" />
         <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
@@ -132,54 +132,49 @@
                 <main>
                 
                     <div class="container-fluid">
-                        <h1 class="mt-4">Cruds/ Suppliers</h1>
+                        <h1 class="mt-4">Cruds/ Products</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Suppliers</li>
+                            <li class="breadcrumb-item active">Products</li>
                         </ol>
                         <div id="appSuppliers">
                         <div class="col">
-                            <button @click="btnAlta" class="btn btn-primary" title="Nuevo"><i class="fas fa-parachute-box"></i>  Añadir Supplier</button><br><br>
+                            <button @click="btnAlta" class="btn btn-primary" title="Nuevo"><i class="fas fa-parachute-box"></i>  Añadir Product</button><br><br>
                         </div>
                         <div class="card mb-4">
-                            <div class="card-header"><i class="fas fa-table mr-1"></i>Tabla de suppliers</div>
+                            <div class="card-header"><i class="fas fa-table mr-1"></i>Tabla de Product</div>
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
+                                                <th>ProductID</th>
+                                                <th>ProductName</th>
                                                 <th>SupplierID</th>
-                                                <th>CompanyName</th>
-                                                <th>ContactName</th>
-                                                <th>ContactTitle</th>
-                                                <th>Address</th>
-                                                <th>City</th>
-                                                <th>Region</th>
-                                                <th>PostalCode</th>
-                                                <th>Country</th>
-                                                <th>Phone</th>
-                                                <th>Fax</th>
-                                                <th>HomePage</th>
-                                                <th>Acciones</th>
+                                                <th>CategoryID</th>
+                                                <th>QuantityPerUnit</th>
+                                                <th>UnitPrice</th>
+                                                <th>UnitsInStock</th>
+                                                <th>UnitsOnOrder</th>
+                                                <th>ReoderLevel</th>
+                                                <th>Discontinued</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr v-for = "(sup, indice) of suppliers">
+                                            <tr v-for = "(sup, indice) of products">
+                                                <td>{{sup.ProductID}}</td>
+                                                <td>{{sup.ProductName}}</td>
                                                 <td>{{sup.SupplierID}}</td>
-                                                <td>{{sup.CompanyName}}</td>
-                                                <td>{{sup.ContactName}}</td>
-                                                <td>{{sup.ContactTitle}}</td>
-                                                <td>{{sup.Ubication}}</td>
-                                                <td>{{sup.City}}</td>
-                                                <td>{{sup.Region}}</td>
-                                                <td>{{sup.PostalCode}}</td>
-                                                <td>{{sup.Country}}</td>
-                                                <td>{{sup.Phone}}</td>
-                                                <td>{{sup.Fax}}</td>
-                                                <td>{{sup.HomePage}}</td>
+                                                <td>{{sup.CategoryID}}</td>
+                                                <td>{{sup.QuantityPerUnit}}</td>
+                                                <td>{{sup.UnitPrice}}</td>
+                                                <td>{{sup.UnitsInStock}}</td>
+                                                <td>{{sup.UnitsOnOrder}}</td>
+                                                <td>{{sup.ReoderLevel}}</td>
+                                                <td>{{sup.Discontinued}}</td>
                                                 <td>
 									                <div class = "btn-group" role = "group">
 										                <button class = "btn btn-secondary" title = "Editar" @click = "btnEditar()"><i class = "fas fa-pencil-alt"></i></button>
-										                <button class = "btn btn-danger" title = "Eliminar" @click = "btnBorrar(sup.SupplierID)"><i class = "fas fa-trash-alt"></i></button>
+										                <button class = "btn btn-danger" title = "Eliminar" @click = "btnBorrar(sup.ProductID)"><i class = "fas fa-trash-alt"></i></button>
 									                </div>
 								                </td>
                                             </tr>
@@ -221,7 +216,7 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
         <!-- maincrud.js -->
-        <script src="../javascript/crudsuppliers.js"></script>
+        <script src="../javascript/crudproducts.js"></script>
         
         <!-- Librerias de diseño -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>

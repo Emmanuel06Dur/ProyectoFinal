@@ -1,21 +1,19 @@
-var url = "../bd/crudsuppliersDB.php";
+var url = "../bd/crudproductsDB.php";
 var appPacientes = new Vue({
     el: "#appSuppliers",
     data:{
-        suppliers: [],
+        products: [],
+        ProductID: "",
+        ProductName: "",
         SupplierID: "",
-        CompanyName: "",
-        ContactName: "",
-        ContactTitle: "",
-        Address: "",
-        City: "",
-        Region: "",
-        PostalCode: "",
-        Country: "",
-        Phone: "",
-        Fax: "",
-        HomePage: ""
-    },
+        CategoryID: "",
+        QuantityPerUnit: "",
+        UnitPrice: "", 
+        UnitsInStock: "",
+        UnitsOnOrder: "",
+        ReoderLevel: "",
+        Discontinued: ""
+        },
     methods:{
         btnAlta:async function(){            
         },
