@@ -133,6 +133,7 @@
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">Principal</li>
                         </ol>
+                        <p>Para los campos CustomerID y EmployeeID es necesario consultar sus respectivas tablas para saber que ID le corresponde a cada fila en caso de no saber.</p>
                         <div id="appOrders">
                         <div class="col">
                             <button @click="btnAlta" class="btn btn-primary" title="Nuevo"><i class="fas fa-shipping-fast"></i>  Añadir Orden</button><br><br>
@@ -179,7 +180,7 @@
                                                 <td>{{orders.ShipCountry}}</td>
                                                 <td>
 									                <div class = "btn-group" role = "group">
-										                <button class = "btn btn-secondary" title = "Editar" @click = "btnEditar()"><i class = "fas fa-pencil-alt"></i></button>
+										                <button class = "btn btn-secondary" title = "Editar" @click = "btnEditar(orders.OrderID, orders.CustomerID, orders.EmployeeID, orders.OrderDate, orders.RequiredDate, orders.ShippedDate, orders.ShipVia, orders.Freight, orders.ShipName, orders.ShipAddress, orders.ShipCity, orders.ShipRegion, orders.ShipPostalCode, orders.ShipCountry)"><i class = "fas fa-pencil-alt"></i></button>
 										                <button class = "btn btn-danger" title = "Eliminar" @click = "btnBorrar(orders.OrderID)"><i class = "fas fa-trash-alt"></i></button>
 									                </div>
 								                </td>

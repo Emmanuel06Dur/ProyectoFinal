@@ -22,23 +22,23 @@
     $ShipCountry = (isset($_POST['ShipCountry'])) ? $_POST['ShipCountry'] : '';
     switch ($opcion){
 		case 1: //Alta
-			$consulta = "INSERT INTO tablename () VALUES ('') ";
+			$consulta = "INSERT INTO orders (CustomerID, EmployeeID, OrderDate, RequiredDate, ShippedDate, ShipVia, Freight, ShipName, ShipAddress, ShipCity, ShipRegion, ShipPostalCode, ShipCountry) VALUES ('$CustomerID', '$EmployeeID', '$OrderDate', '$RequiredDate', '$ShippedDate', '$ShipVia', '$Freight', '$ShipName', '$ShipAddress', '$ShipCity', '$ShipRegion', '$ShipPostalCode', '$ShipCountry') ";
 			$resultado = $conexion -> prepare($consulta);
 			$resultado -> execute();
 			break;
 		case 2: //Modificar
-			$consulta = "UPDATE tablename SET campo='campo'";
+			$consulta = "UPDATE orders SET CustomerID='$CustomerID', EmployeeID='$EmployeeID', OrderDate='$OrderDate', RequiredDate='$RequiredDate', ShippedDate='$ShippedDate', ShipVia='$ShipVia', Freight='$Freight', ShipName='$ShipName', ShipAddress='$ShipAddress', ShipCity='$ShipCity', ShipRegion='$ShipRegion', ShipPostalCode='$ShipPostalCode', ShipCountry='$ShipCountry' WHERE OrderID='$OrderID' ";
 			$resultado = $conexion -> prepare($consulta);
 			$resultado -> execute();
 			$data = $resultado->fetchAll(PDO::FETCH_ASSOC);
 			break;
 		case 3: //Borrar
-			$consulta = "DELETE FROM tablename WHERE OrderID='$OrderDate'";
+			$consulta = "DELETE FROM orders WHERE OrderID='$OrderID'";
 			$resultado = $conexion -> prepare($consulta);
 			$resultado -> execute();
 			break;
 		case 4: //Listar
-			$consulta = "SELECT OrderID, CustomerID, EmployeeID, OrderDate, RequiredDate, ShippedDate, ShipVia, Freight, ShipName, ShipAddress, ShipCity, ShipRegion, ShipPostalCode, ShipCountry FROM orders LIMIT 100";
+			$consulta = "SELECT OrderID, CustomerID, EmployeeID, OrderDate, RequiredDate, ShippedDate, ShipVia, Freight, ShipName, ShipAddress, ShipCity, ShipRegion, ShipPostalCode, ShipCountry FROM orders LIMIT 90";
 			$resultado = $conexion -> prepare($consulta);
 			$resultado -> execute();
 			$data = $resultado -> fetchAll(PDO::FETCH_ASSOC);
