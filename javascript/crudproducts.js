@@ -13,7 +13,7 @@ var appPacientes = new Vue({
         UnitsOnOrder: "",
         ReoderLevel: "",
         Discontinued: ""
-        },
+    },
     methods:{
         btnAlta:async function(){            
         },

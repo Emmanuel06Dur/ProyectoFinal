@@ -76,7 +76,7 @@
                                     <!-- Link crud Pedro -->
                                     <a class="nav-link" href="#">Employees</a>
                                     <!-- Link crud Martinez -->
-                                    <a class="nav-link" href="#">Customers</a>
+                                    <a class="nav-link" href="../crudshtml/crudcustomers.php">Customers</a>
                                     <!-- Link crud Alexander -->
                                     <a class="nav-link" href="#">Shippers</a>
                                     <!-- Link crud Emmanuel -->
@@ -133,10 +133,13 @@
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">Principal</li>
                         </ol>
-                        <p>Para los campos CustomerID y EmployeeID es necesario consultar sus respectivas tablas para saber que ID le corresponde a cada fila en caso de no saber.</p>
+                        <p>Para los campos CustomerID y EmployeeID es necesario consultar sus respectivas tablas para saber que ID le corresponde a cada fila si se desea editar, en caso de agregar una nueva orden no sera necesario este procedimiento.</p>
                         <div id="appOrders">
                         <div class="col">
-                            <button @click="btnAlta" class="btn btn-primary" title="Nuevo"><i class="fas fa-shipping-fast"></i>  Añadir Orden</button><br><br>
+                            <button @click="btnAlta" class="btn btn-primary" title="Nuevo"><i class="fas fa-shipping-fast"></i>  Añadir Orden</button>
+                            <button @click="" class="btn btn-success" title="Ir"><i class="fas fa-people-carry"></i>  Ver tabla Employees</button>
+                            <button @click="" class="btn btn-success" title="Ir"><i class="fas fa-users"></i>  Ver tabla Customers</button>
+                            <button @click="" class="btn btn-success" title="Ir"><i class="fas fa-clipboard-list"></i>  Detalles de Ordenes</button><br><br>
                         </div>
                         <div class="card mb-4">
                             <div class="card-header"><i class="fas fa-table mr-1"></i>Tabla de Ordenes</div>
