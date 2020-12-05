@@ -11,7 +11,7 @@ var appSuppliers = new Vue({
         TitleOfCourtesy: "",
         BirthDate: "",
         HireDate: "",
-        Address: "",
+        Ubications: "",
         City: "",
         Region: "",
         PostalCode: "",
@@ -28,7 +28,7 @@ var appSuppliers = new Vue({
             const {value: formValues} = await 
             Swal.fire({
                 title: 'Nuevo Empleado',
-                html: '<div class = "row"><label class = "col-sm-3 col-form-label"> Last <br> Name </label><div class = "col-sm-7"><input id = "LastName" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> First<br>Name </label><div class = "col-sm-7"><input id = "FirstName" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Usuario </label><div class = "col-sm-7"><input id = "Usuario" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Password </label><div class = "col-sm-7"><input id = "Password" type = "pass" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Title </label><div class = "col-sm-7"><input id = "Title" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Title <br> Of <br> Courtesy </label><div class = "col-sm-7"><input id = "TitleOfCourtesy" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> BirthDate </label><div class = "col-sm-7"><input id = "BirthDate" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> HireDate </label><div class = "col-sm-7"><input id = "HireDate" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Address </label><div class = "col-sm-7"><input id = "Address" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> City </label><div class = "col-sm-7"><input id = "City" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Region </label><div class = "col-sm-7"><input id = "Region" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Postal <br> Code </label><div class = "col-sm-7"><input id = "PostalCode" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Country </label><div class = "col-sm-7"><input id = "Country" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Home <br> Phone </label><div class = "col-sm-7"><input id = "HomePhone" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Extension </label><div class = "col-sm-7"><input id = "Extension" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Photo </label><div class = "col-sm-7"><input id = "Photo" type="file" accept="image/x-png,image/jpeg" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Notes </label><div class = "col-sm-7"><input id = "Notes" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Reports <br> To </label><div class = "col-sm-7"><input id = "ReportsTo" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> PhotoPath </label><div class = "col-sm-7"><input id = "PhotoPath" type = "text" class = "form-control"></div></div>',
+                html: '<div class = "row"><label class = "col-sm-3 col-form-label"> Last <br> Name </label><div class = "col-sm-7"><input id = "LastName" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> First<br>Name </label><div class = "col-sm-7"><input id = "FirstName" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Usuario </label><div class = "col-sm-7"><input id = "Usuario" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Password </label><div class = "col-sm-7"><input id = "Password" type = "pass" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Title </label><div class = "col-sm-7"><input id = "Title" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Title <br> Of <br> Courtesy </label><div class = "col-sm-7"><input id = "TitleOfCourtesy" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> BirthDate </label><div class = "col-sm-7"><input id = "BirthDate" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> HireDate </label><div class = "col-sm-7"><input id = "HireDate" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Ubications </label><div class = "col-sm-7"><input id = "Ubications" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> City </label><div class = "col-sm-7"><input id = "City" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Region </label><div class = "col-sm-7"><input id = "Region" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Postal <br> Code </label><div class = "col-sm-7"><input id = "PostalCode" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Country </label><div class = "col-sm-7"><input id = "Country" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Home <br> Phone </label><div class = "col-sm-7"><input id = "HomePhone" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Extension </label><div class = "col-sm-7"><input id = "Extension" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Photo </label><div class = "col-sm-7"><input id = "Photo" type="file" accept="image/x-png,image/jpeg" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Notes </label><div class = "col-sm-7"><input id = "Notes" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Reports <br> To </label><div class = "col-sm-7"><input id = "ReportsTo" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> PhotoPath </label><div class = "col-sm-7"><input id = "PhotoPath" type = "text" class = "form-control"></div></div>',
 				//Se agrego photo
                 focusConfirm: false,
 				confirmButtonText: 'Guardar',
@@ -45,21 +45,21 @@ var appSuppliers = new Vue({
                         this.TitleOfCourtesy = document.getElementById('TitleOfCourtesy').value,
                         this.BirthDate = document.getElementById('BirthDate').value,
                         this.HireDate = document.getElementById('HireDate').value,
-                        this.Address = document.getElementById('Address').value,
+                        this.Ubications = document.getElementById('Ubications').value,
                         this.City = document.getElementById('City').value,
                         this.Region = document.getElementById('Region').value,
                         this.PostalCode = document.getElementById('PostalCode').value,
                         this.Country = document.getElementById('Country').value,
                         this.HomePhone = document.getElementById('HomePhone').value,
                         this.Extension = document.getElementById('Extension').value,
-                        this.Photo = document.getElementById('Photo').value,
+                        this.Photo = document.getElementById('Photo').files[0],
                         this.Notes = document.getElementById('Notes').value,
                         this.ReportsTo = document.getElementById('ReportsTo').value,
                         this.PhotoPath = document.getElementById('PhotoPath').value
 					]
 				}
 			}) 
-            if(this.LastName == "" || this.FirstName == "" || this.Usuario == "" || this.Password == "" || this.Title == "" || this.TitleOfCourtesy == "" || this.BirthDate == "" || this.HireDate == "" || this.Address == "" ||  this.City == "" || this.Region == "" || this.PostalCode == "" || this.Country == "" || this.HomePhone == "" || this.Extension == "" || this.Photo == "" || this.Notes == "" || this.ReportsTo == "" || this.PhotoPath == "") {
+            if(this.LastName == "" || this.FirstName == "" || this.Usuario == "" || this.Password == "" || this.Title == "" || this.TitleOfCourtesy == "" || this.BirthDate == "" || this.HireDate == "" || this.Ubications == "" ||  this.City == "" || this.Region == "" || this.PostalCode == "" || this.Country == "" || this.HomePhone == "" || this.Extension == "" || this.Photo == "" || this.Notes == "" || this.ReportsTo == "" || this.PhotoPath == "") {
 				Swal.fire({
                     icon: 'error',
 					type: 'info',
@@ -81,10 +81,10 @@ var appSuppliers = new Vue({
 				})
 			}
         },
-        btnEditar:async function(EmployeeID, LastName, FirstName, Usuario, Password, Title, TitleOfCourtesy, BirthDate, HireDate, Address, City, Region, PostalCode, Country, HomePhone, Extension, Photo, Notes, ReportsTo, PhotoPath){
+        btnEditar:async function(EmployeeID, LastName, FirstName, Usuario, Password, Title, TitleOfCourtesy, BirthDate, HireDate, Ubications, City, Region, PostalCode, Country, HomePhone, Extension, Photo, Notes, ReportsTo, PhotoPath){
             await Swal.fire({
 				title: 'Editar Registro',
-                html: '<div class = "form-group"><div class = "row"><label class = "col-sm-3 col-form-label"> Last <br> Name </label><div class = "col-sm-7"><input id = "LastName" value="'+LastName+'" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> First<br>Name </label><div class = "col-sm-7"><input id = "FirstName" value="'+FirstName+'" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Usuario </label><div class = "col-sm-7"><input id = "Usuario" value="'+Usuario+'" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Password </label><div class = "col-sm-7"><input id = "Password" value="'+Password+'" type = "pass" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Title </label><div class = "col-sm-7"><input id = "Title" value="'+Title+'" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Title <br> Of <br> Courtesy </label><div class = "col-sm-7"><input id = "TitleOfCourtesy" value="'+TitleOfCourtesy+'" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> BirthDate </label><div class = "col-sm-7"><input id = "BirthDate" value="'+BirthDate+'" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> HireDate </label><div class = "col-sm-7"><input id = "HireDate" value="'+HireDate+'" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Address </label><div class = "col-sm-7"><input id = "Address" value="'+Address+'" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> City </label><div class = "col-sm-7"><input id = "City" value="'+City+'" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Region </label><div class = "col-sm-7"><input id = "Region" value="'+Region+'" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Postal <br> Code </label><div class = "col-sm-7"><input id = "PostalCode" value="'+PostalCode+'" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Country </label><div class = "col-sm-7"><input id = "Country" value="'+Country+'" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Home <br> Phone </label><div class = "col-sm-7"><input id = "HomePhone" value="'+HomePhone+'" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Extension </label><div class = "col-sm-7"><input id = "Extension" value="'+Extension+'" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Photo </label><div class = "col-sm-7"><input id = "Photo" value="'+Photo+'" type="file" accept="image/x-png,image/jpeg" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Notes </label><div class = "col-sm-7"><input id = "Notes" value="'+Notes+'" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Reports <br> To </label><div class = "col-sm-7"><input id = "ReportsTo" value="'+ReportsTo+'" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> PhotoPath </label><div class = "col-sm-7"><input id = "PhotoPath" value="'+PhotoPath+'" type = "text" class = "form-control"></div></div></div>',
+                html: '<div class = "form-group"><div class = "row"><label class = "col-sm-3 col-form-label"> Last <br> Name </label><div class = "col-sm-7"><input id = "LastName" value="'+LastName+'" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> First<br>Name </label><div class = "col-sm-7"><input id = "FirstName" value="'+FirstName+'" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Usuario </label><div class = "col-sm-7"><input id = "Usuario" value="'+Usuario+'" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Password </label><div class = "col-sm-7"><input id = "Password" value="'+Password+'" type = "pass" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Title </label><div class = "col-sm-7"><input id = "Title" value="'+Title+'" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Title <br> Of <br> Courtesy </label><div class = "col-sm-7"><input id = "TitleOfCourtesy" value="'+TitleOfCourtesy+'" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> BirthDate </label><div class = "col-sm-7"><input id = "BirthDate" value="'+BirthDate+'" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> HireDate </label><div class = "col-sm-7"><input id = "HireDate" value="'+HireDate+'" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Ubications </label><div class = "col-sm-7"><input id = "Ubications" value="'+Ubications+'" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> City </label><div class = "col-sm-7"><input id = "City" value="'+City+'" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Region </label><div class = "col-sm-7"><input id = "Region" value="'+Region+'" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Postal <br> Code </label><div class = "col-sm-7"><input id = "PostalCode" value="'+PostalCode+'" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Country </label><div class = "col-sm-7"><input id = "Country" value="'+Country+'" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Home <br> Phone </label><div class = "col-sm-7"><input id = "HomePhone" value="'+HomePhone+'" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Extension </label><div class = "col-sm-7"><input id = "Extension" value="'+Extension+'" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Photo </label><div class = "col-sm-7"><input id = "Photo" type="file" accept="image/x-png,image/jpeg" class = "form-control"><img src="img/"+'+Photo+' width=200></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Notes </label><div class = "col-sm-7"><input id = "Notes" value="'+Notes+'" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> Reports <br> To </label><div class = "col-sm-7"><input id = "ReportsTo" value="'+ReportsTo+'" type = "text" class = "form-control"></div></div><div class = "row"><label class = "col-sm-3 col-form-label"> PhotoPath </label><div class = "col-sm-7"><input id = "PhotoPath" value="'+PhotoPath+'" type = "text" class = "form-control"></div></div></div>',
 				//Falta Photo
                 focusConfirm: false,
 				showCancelButton: true,
@@ -99,18 +99,18 @@ var appSuppliers = new Vue({
                 TitleOfCourtesy = document.getElementById('TitleOfCourtesy').value,
                 BirthDate = document.getElementById('BirthDate').value,
                 HireDate = document.getElementById('HireDate').value,
-                Address = document.getElementById('Address').value,
+                Ubications = document.getElementById('Ubications').value,
                 City = document.getElementById('City').value,
                 Region = document.getElementById('Region').value,
                 PostalCode = document.getElementById('PostalCode').value,
                 Country = document.getElementById('Country').value,
                 HomePhone = document.getElementById('HomePhone').value,
                 Extension = document.getElementById('Extension').value,
-                Photo = document.getElementById('Photo').value,
+                Photo = document.getElementById('Photo').files[0],
                 Notes = document.getElementById('Notes').value,
                 ReportsTo = document.getElementById('ReportsTo').value,
                 PhotoPath = document.getElementById('PhotoPath').value,
-				this.editarEmployees(EmployeeID, LastName, FirstName, Usuario, Password, Title, TitleOfCourtesy, BirthDate, HireDate, Address, City, Region, PostalCode, Country, HomePhone, Extension, Photo, Notes, ReportsTo, PhotoPath);
+				this.editarEmployees(EmployeeID, LastName, FirstName, Usuario, Password, Title, TitleOfCourtesy, BirthDate, HireDate, Ubications, City, Region, PostalCode, Country, HomePhone, Extension, Photo, Notes, ReportsTo, PhotoPath);
 				Swal.fire(
 						'¡Actualizado!',
 						'El registro ha sido actualizado.',
@@ -144,12 +144,12 @@ var appSuppliers = new Vue({
         listarEmployees:function() {
             axios.post(url,{opcion:4}).then(response => {
                 this.employees = response.data;
-                console.log(this.employees);
+                //console.log(this.employees);
             });
         },
         //Procedimiento crear
         altaEmployees:function() {
-            axios.post(url, {opcion:1, LastName:this.LastName, FirstName:this.FirstName, Usuario:this.Usuario, Password:this.Password, Title:this.Title, TitleOfCourtesy:this.TitleOfCourtesy, BirthDate:this.BirthDate, HireDate:this.HireDate, Address:this.Address, City:this.City, Region:this.Region, PostalCode:this.PostalCode, Country:this.Country, HomePhone:this.HomePhone, Extension:this.Extension, Photo:this.Photo, Notes:this.Notes, ReportsTo:this.ReportsTo, PhotoPath:this.PhotoPath}).then(response => {
+            axios.post(url, {opcion:1, LastName:this.LastName, FirstName:this.FirstName, Usuario:this.Usuario, Password:this.Password, Title:this.Title, TitleOfCourtesy:this.TitleOfCourtesy, BirthDate:this.BirthDate, HireDate:this.HireDate, Ubications:this.Ubications, City:this.City, Region:this.Region, PostalCode:this.PostalCode, Country:this.Country, HomePhone:this.HomePhone, Extension:this.Extension, Photo:this.Photo, Notes:this.Notes, ReportsTo:this.ReportsTo, PhotoPath:this.PhotoPath}).then(response => {
                 this.listarEmployees();
             });
             this.LastName = "";
@@ -160,7 +160,7 @@ var appSuppliers = new Vue({
             this.TitleOfCourtesy = "";
             this.BirthDate = "";
             this.HireDate = "";
-            this.Address = "";
+            this.Ubications = "";
             this.City = "";
             this.Region = "";
             this.PostalCode = "";
@@ -173,8 +173,8 @@ var appSuppliers = new Vue({
             this.PhotoPath = "";
         },
         //Procedimiento editar
-        editarEmployees:function(EmployeeID, LastName, FirstName, Usuario, Password, Title, TitleOfCourtesy, BirthDate, HireDate, Address, City, Region, PostalCode, Country, HomePhone, Extension, Photo, Notes, ReportsTo, PhotoPath) {
-            axios.post(url, {opcion:2, LastName:LastName, FirstName:FirstName, Usuario:Usuario, Password:Password, Title:Title, TitleOfCourtesy:TitleOfCourtesy, BirthDate:BirthDate, HireDate:HireDate, Address:Address, City:City, Region:Region, PostalCode:PostalCode, Country:Country, HomePhone:HomePhone, Extension:Extension, Photo:Photo, Notes:Notes, ReportsTo:ReportsTo, PhotoPath:PhotoPath}).then(response => {
+        editarEmployees:function(EmployeeID, LastName, FirstName, Usuario, Password, Title, TitleOfCourtesy, BirthDate, HireDate, Ubications, City, Region, PostalCode, Country, HomePhone, Extension, Photo, Notes, ReportsTo, PhotoPath) {
+            axios.post(url, {opcion:2, LastName:LastName, FirstName:FirstName, Usuario:Usuario, Password:Password, Title:Title, TitleOfCourtesy:TitleOfCourtesy, BirthDate:BirthDate, HireDate:HireDate, Ubications:Ubications, City:City, Region:Region, PostalCode:PostalCode, Country:Country, HomePhone:HomePhone, Extension:Extension, Photo:Photo, Notes:Notes, ReportsTo:ReportsTo, PhotoPath:PhotoPath}).then(response => {
                 this.listarEmployees();
             });
         },
@@ -184,6 +184,16 @@ var appSuppliers = new Vue({
                 this.listarEmployees();
             });
         }
+        /*verImagen:function(){
+            var _this = this
+            _this.file = _this.$refs.foto.files[0];
+            _this.url = URL.createObjectURL(_this.file);
+        },
+        everImagen:function(){
+            var _this = this
+            _this.file = _this.$refs.efoto.files[0];
+            _this.eurl = URL.createObjectURL(_this.file);
+        }*/
     },
     created:function(){
         this.listarEmployees();
