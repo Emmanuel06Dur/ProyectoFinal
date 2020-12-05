@@ -75,9 +75,9 @@
                                 <!-- Navegacion de acerca de -->
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <!-- Link crud Pedro -->
-                                    <a class="nav-link" href="crudemployees.php">Employees</a>
+                                    <a class="nav-link" href="#">Employees</a>
                                     <!-- Link crud Martinez -->
-                                    <a class="nav-link" href="#">Customers</a>
+                                    <a class="nav-link" href="crudcustomers.php">Customers</a>
                                     <!-- Link crud Alexander -->
                                     <a class="nav-link" href="#">Shippers</a>
                                     <!-- Link crud Emmanuel -->

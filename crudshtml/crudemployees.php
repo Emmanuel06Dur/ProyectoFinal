@@ -249,9 +249,10 @@
                     </div>
                 </nav>
             </div>
+
+            <!-- Dentro del DashBoard-->
 			<div id="layoutSidenav_content">
                 <main>
-                
                     <div class="container-fluid">
                         <h1 class="mt-4">Cruds/ Employees</h1>
                         <ol class="breadcrumb mb-4">
@@ -259,7 +260,7 @@
                         </ol>
                         <div id="appEmployees">
                         <div class="col">
-                            <button @click="btnAlta" class="btn btn-primary" title="Nuevo"><i class="fas fa-parachute-box"></i>  Añadir Employee</button><br><br>
+                            <button @click="btnAlta" class="btn btn-primary" title="Nuevo"><i class="fas fa-user-tie"></i>  Añadir Employee</button><br><br>
                         </div>
                         <div class="card mb-4">
                             <div class="card-header"><i class="fas fa-table mr-1"></i>Tabla de Employees</div>
@@ -271,20 +272,17 @@
                                                 <th>EmployeeID</th>
                                                 <th>LastName</th>
                                                 <th>FirstName</th>
-                                                <th>Usuario</th>
-                                                <th>Password</th>
                                                 <th>Title</th>
                                                 <th>TitleOfCourtesy</th>
                                                 <th>BirthDate</th>
                                                 <th>HireDate</th>
-                                                <th>Address</th>
+                                                <th>Ubication</th>
                                                 <th>City</th>
                                                 <th>Region</th>
                                                 <th>PostalCode</th>
                                                 <th>Country</th>
                                                 <th>HomePhone</th>
                                                 <th>Extension</th>
-                                                <th>Photo</th>
                                                 <th>Notes</th>
                                                 <th>ReportsTo</th>
                                                 <th>PhotoPath</th>
@@ -296,26 +294,23 @@
                                                 <td>{{emp.EmployeeID}}</td>
                                                 <td>{{emp.LastName}}</td>
                                                 <td>{{emp.FirstName}}</td>
-                                                <td>{{emp.Usuario}}</td>
-                                                <td>{{emp.Password}}</td>
                                                 <td>{{emp.Title}}</td>
                                                 <td>{{emp.TitleOfCourtesy}}</td>
                                                 <td>{{emp.BirthDate}}</td>
                                                 <td>{{emp.HireDate}}</td>
-                                                <td>{{emp.Ubications}}</td>
+                                                <td>{{emp.Ubication}}</td>
                                                 <td>{{emp.City}}</td>
                                                 <td>{{emp.Region}}</td>
                                                 <td>{{emp.PostalCode}}</td>
                                                 <td>{{emp.Country}}</td>
                                                 <td>{{emp.HomePhone}}</td>
                                                 <td>{{emp.Extension}}</td>
-                                                <td><img :src="'img/'+emp.Photo" width="200"></td>
                                                 <td>{{emp.Notes}}</td>
                                                 <td>{{emp.ReportsTo}}</td>
                                                 <td>{{emp.PhotoPath}}</td>
                                                 <td>
 									                <div class = "btn-group" role = "group">
-										                <button class = "btn btn-secondary" title = "Editar" @click = "btnEditar(emp.EmployeeID, emp.LastName, emp.FirstName, emp.Usuario, emp.Password, emp.Title, emp.TitleOfCourtesy, emp.BirthDate, emp.HireDate, emp.Ubications, emp.City, emp.Region, emp.PostalCode, emp.Country, emp.HomePhone, emp.Extension, emp.Photo, emp.Notes, emp.ReportsTo, emp.PhotoPath)"><i class = "fas fa-pencil-alt"></i></button>
+										                <button class = "btn btn-secondary" title = "Editar" @click = "btnEditar(emp.EmployeeID, emp.LastName, emp.FirstName, emp.Title, emp.TitleOfCourtesy, emp.BirthDate, emp.HireDate, emp.Ubication, emp.City, emp.Region, emp.PostalCode, emp.Country, emp.HomePhone, emp.Extension, emp.Notes, emp.ReportsTo, emp.PhotoPath)"><i class = "fas fa-pencil-alt"></i></button>
 										                <button class = "btn btn-danger" title = "Eliminar" @click = "btnBorrar(emp.EmployeeID)"><i class = "fas fa-trash-alt"></i></button>
 									                </div>
 								                </td>
