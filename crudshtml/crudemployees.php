@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <link rel="icon" type="image/png" href="../img/inventario.png">
-        <title>Suppliers // NWIND</title>
+        <title>Employees // NWIND</title>
         
         <link href="../panelprincipal/css/styles.css" rel="stylesheet" />
         <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
@@ -75,7 +75,7 @@
                                 <!-- Navegacion de acerca de -->
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <!-- Link crud Pedro -->
-                                    <a class="nav-link" href="#">Employees</a>
+                                    <a class="nav-link" href="crudemployees.php">Employees</a>
                                     <!-- Link crud Martinez -->
                                     <a class="nav-link" href="#">Customers</a>
                                     <!-- Link crud Alexander -->
@@ -131,7 +131,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <link rel="icon" type="image/png" href="../img/inventario.png">
-        <title>Suppliers // NWIND</title>
+        <title>Employees // NWIND</title>
         
         <link href="../panelprincipal/css/styles.css" rel="stylesheet" />
         <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
@@ -288,6 +288,7 @@
                                                 <th>Notes</th>
                                                 <th>ReportsTo</th>
                                                 <th>PhotoPath</th>
+                                                <th>Acciones</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -301,20 +302,20 @@
                                                 <td>{{emp.TitleOfCourtesy}}</td>
                                                 <td>{{emp.BirthDate}}</td>
                                                 <td>{{emp.HireDate}}</td>
-                                                <td>{{emp.Adress}}</td>
+                                                <td>{{emp.Ubications}}</td>
                                                 <td>{{emp.City}}</td>
                                                 <td>{{emp.Region}}</td>
                                                 <td>{{emp.PostalCode}}</td>
                                                 <td>{{emp.Country}}</td>
                                                 <td>{{emp.HomePhone}}</td>
                                                 <td>{{emp.Extension}}</td>
-                                                <td>{{emp.Photo}}</td>
+                                                <td><img :src="'img/'+emp.Photo" width="200"></td>
                                                 <td>{{emp.Notes}}</td>
                                                 <td>{{emp.ReportsTo}}</td>
                                                 <td>{{emp.PhotoPath}}</td>
                                                 <td>
 									                <div class = "btn-group" role = "group">
-										                <button class = "btn btn-secondary" title = "Editar" @click = "btnEditar(emp.EmployeeID, emp.LastName, emp.FirstName, emp.Usuario, emp.Password, emp.Title, emp.TitleOfCourtesy, emp.BirthDate, emp.HireDate, emp.Adress, emp.City, emp.Region, emp.PostalCode, emp.Country, emp.HomePhone, emp.Extension, emp.Photo, emp.Notes, emp.ReportsTo, emp.PhotoPath)"><i class = "fas fa-pencil-alt"></i></button>
+										                <button class = "btn btn-secondary" title = "Editar" @click = "btnEditar(emp.EmployeeID, emp.LastName, emp.FirstName, emp.Usuario, emp.Password, emp.Title, emp.TitleOfCourtesy, emp.BirthDate, emp.HireDate, emp.Ubications, emp.City, emp.Region, emp.PostalCode, emp.Country, emp.HomePhone, emp.Extension, emp.Photo, emp.Notes, emp.ReportsTo, emp.PhotoPath)"><i class = "fas fa-pencil-alt"></i></button>
 										                <button class = "btn btn-danger" title = "Eliminar" @click = "btnBorrar(emp.EmployeeID)"><i class = "fas fa-trash-alt"></i></button>
 									                </div>
 								                </td>
