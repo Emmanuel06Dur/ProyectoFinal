@@ -15,27 +15,32 @@
     $TitleOfCourtesy = (isset($_POST['TitleOfCourtesy'])) ? $_POST['TitleOfCourtesy'] : '';
     $BirthDate = (isset($_POST['BirthDate'])) ? $_POST['BirthDate'] : '';
     $HireDate = (isset($_POST['HireDate'])) ? $_POST['HireDate'] : '';
-    $Address = (isset($_POST['Address'])) ? $_POST['Address'] : '';
+    $Ubications = (isset($_POST['Ubications'])) ? $_POST['Ubications'] : '';
     $City = (isset($_POST['City'])) ? $_POST['City'] : '';
     $Region = (isset($_POST['Region'])) ? $_POST['Region'] : '';
     $PostalCode = (isset($_POST['PostalCode'])) ? $_POST['PostalCode'] : '';
     $Country = (isset($_POST['Country'])) ? $_POST['Country'] : '';
     $HomePhone = (isset($_POST['HomePhone'])) ? $_POST['HomePhone'] : '';
     $Extension = (isset($_POST['Extension'])) ? $_POST['Extension'] : '';
-    $Photo = (isset($_POST['Photo'])) ? $_POST['Photo'] : '';
+    $Photo = (isset($_FILES['Photo']['tmp_name'])) ? $_FILES['Photo']['tmp_name'] : '';
+    //$Photo = $_FILES['Photo']['name'];
     $Notes = (isset($_POST['Notes'])) ? $_POST['Notes'] : '';
     $ReportsTo = (isset($_POST['ReportsTo'])) ? $_POST['ReportsTo'] : '';
     $PhotoPath = (isset($_POST['PhotoPath'])) ? $_POST['PhotoPath'] : '';
 
     $contra=md5($Password);
+    /*$target_dir="img/";
+    $target_file=$target_dir.basename($Photo);
+    move_uploaded_file($_FILES['Photo']['tmp_name'], $target_file);
+    $Photo=", foto='".$_FILES['Photo']['name']."'";*/
     switch ($opcion){
 		case 1: //Alta
-			$consulta = "INSERT INTO employees (LastName, FirstName, Usuario, Password, Title, TitleOfCourtesy, BirthDate, HireDate, Address, City, Region, PostalCode, Country, HomePhone, Extension, Photo, Notes, ReportsTo, PhotoPath) VALUES ('$LastName', '$FirstName', '$Usuario', '$contra', '$Title', '$TitleOfCourtesy', '$BirthDate', '$HireDate', '$Address', '$City', '$Region', '$PostalCode', '$Country', '$HomePhone', '$Extension', '$Photo', '$Notes', '$ReportsTo', '$PhotoPath') ";
+			$consulta = "INSERT INTO employees (LastName, FirstName, Usuario, Password, Title, TitleOfCourtesy, BirthDate, HireDate, Ubications, City, Region, PostalCode, Country, HomePhone, Extension, Photo, Notes, ReportsTo, PhotoPath) VALUES ('$LastName', '$FirstName', '$Usuario', '$contra', '$Title', '$TitleOfCourtesy', '$BirthDate', '$HireDate', '$Ubications', '$City', '$Region', '$PostalCode', '$Country', '$HomePhone', '$Extension', '$Photo', '$Notes', '$ReportsTo', '$PhotoPath') ";
 			$resultado = $conexion -> prepare($consulta);
 			$resultado -> execute();
 			break;
 		case 2: //Modificar
-			$consulta = "UPDATE employees SET LastName = '$LastName', FirstName='$FirstName', Usuario='$Usuario', Password='$contra', Title='$Title', TitleOfCourtesy='$TitleOfCourtesy', BirthDate='$BirthDate', HireDate='$HireDate', Address='$Address', City='$City', Region='$Region', PostalCode='$PostalCode', Country='$Country', HomePhone='$HomePhone', Extension='$Extension', Photo='$Photo', Notes='$Notes', ReportsTo='$ReportsTo', PhotoPath='$PhotoPath' WHERE EmployeeID = '$EmployeeID' ";
+			$consulta = "UPDATE employees SET LastName = '$LastName', FirstName='$FirstName', Usuario='$Usuario', Password='$contra', Title='$Title', TitleOfCourtesy='$TitleOfCourtesy', BirthDate='$BirthDate', HireDate='$HireDate', Ubications='$Ubications', City='$City', Region='$Region', PostalCode='$PostalCode', Country='$Country', HomePhone='$HomePhone', Extension='$Extension', Photo='$Photo', Notes='$Notes', ReportsTo='$ReportsTo', PhotoPath='$PhotoPath' WHERE EmployeeID = '$EmployeeID' ";
 			$resultado = $conexion -> prepare($consulta);
 			$resultado -> execute();
 			$data = $resultado->fetchAll(PDO::FETCH_ASSOC);
