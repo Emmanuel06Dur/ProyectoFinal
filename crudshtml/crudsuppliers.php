@@ -75,7 +75,7 @@
                                 <!-- Navegacion de acerca de -->
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <!-- Link crud Pedro -->
-                                    <a class="nav-link" href="#">Employees</a>
+                                    <a class="nav-link" href="crudemployees.php">Employees</a>
                                     <!-- Link crud Martinez -->
                                     <a class="nav-link" href="crudcustomers.php">Customers</a>
                                     <!-- Link crud Alexander -->
@@ -104,7 +104,7 @@
                                     </a>
                                     <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
                                         <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="#">Reporte de Ordenes por Empleado y Mes</a>
+                                            <a class="nav-link" href="../reportes/reporte1.php">Reporte de Ordenes por Empleado y Mes</a>
                                             <a class="nav-link" href="../reportes/reporte2.php">Reporte Cantidad de Productos Ordenados</a>
                                         </nav>
                                     </div>
