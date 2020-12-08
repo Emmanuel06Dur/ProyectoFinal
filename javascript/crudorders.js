@@ -119,6 +119,12 @@ var appOrders = new Vue({
 				}
 			})
         },
+        btnIrEmployees:function(){
+            window.location.href = "../crudshtml/crudemployees.php"
+        },
+        btnIrCustomers:function(){
+            window.location.href = "../crudshtml/crudcustomers.php"
+        },
         //Procedimientos
         //Procedimiento de listar
         listarOrders:function() {

@@ -137,8 +137,8 @@
                         <div id="appOrders">
                         <div class="col">
                             <button @click="btnAlta" class="btn btn-primary" title="Nuevo"><i class="fas fa-shipping-fast"></i>  Añadir Orden</button>
-                            <button @click="" class="btn btn-success" title="Ir"><i class="fas fa-people-carry"></i>  Ver tabla Employees</button>
-                            <button @click="" class="btn btn-success" title="Ir"><i class="fas fa-users"></i>  Ver tabla Customers</button>
+                            <button @click="btnIrEmployees" class="btn btn-success" title="Ir"><i class="fas fa-people-carry"></i>  Ver tabla Employees</button>
+                            <button @click="btnIrCustomers" class="btn btn-success" title="Ir"><i class="fas fa-users"></i>  Ver tabla Customers</button>
                             <button @click="" class="btn btn-success" title="Ir"><i class="fas fa-clipboard-list"></i>  Detalles de Ordenes</button><br><br>
                         </div>
                         <div class="card mb-4">
