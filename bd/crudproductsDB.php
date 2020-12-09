@@ -14,27 +14,27 @@
     $UnitPrice = (isset($_POST['UnitPrice'])) ? $_POST['UnitPrice'] : '';
     $UnitsInStock = (isset($_POST['UnitsInStock'])) ? $_POST['UnitsInStock'] : '';
     $UnitsOnOrder = (isset($_POST['UnitsOnOrder'])) ? $_POST['UnitsOnOrder'] : '';
-    $ReoderLevel = (isset($_POST['ReoderLevel'])) ? $_POST['ReoderLevel'] : '';
-    $Discontinued = (isset($_POST['Phone'])) ? $_POST['Phone'] : '';
+    $ReorderLevel = (isset($_POST['ReorderLevel'])) ? $_POST['ReorderLevel'] : '';
+    $Discontinued = (isset($_POST['Discontinued'])) ? $_POST['Discontinued'] : '';
     switch ($opcion){
 		case 1: //Alta
-			$consulta = "INSERT INTO tablename () VALUES () ";
+			$consulta = "INSERT INTO products (ProductName, SupplierID, CategoryID, QuantityPerUnit, UnitPrice, UnitsInStock, UnitsOnOrder, ReorderLevel, Discontinued) VALUES ('$ProductName', '$SupplierID', '$CategoryID', '$QuantityPerUnit', '$UnitPrice', '$UnitsInStock', '$UnitsOnOrder', '$ReorderLevel', '$Discontinued')";
 			$resultado = $conexion -> prepare($consulta);
 			$resultado -> execute();
 			break;
 		case 2: //Modificar
-			$consulta = "UPDATE tablename SET nombre = '' WHERE id = '$ProductID' ";
+			$consulta = "UPDATE products SET ProductName='$ProductName', SupplierID='$SupplierID', CategoryID='$CategoryID', QuantityPerUnit='$QuantityPerUnit', UnitPrice='$UnitPrice', UnitsInStock='$UnitsInStock', UnitsOnOrder='$UnitsOnOrder', ReorderLevel='$ReorderLevel', Discontinued='$Discontinued' WHERE ProductID = '$ProductID' ";
 			$resultado = $conexion -> prepare($consulta);
 			$resultado -> execute();
 			$data = $resultado->fetchAll(PDO::FETCH_ASSOC);
 			break;
 		case 3: //Borrar
-			$consulta = "DELETE FROM tablename WHERE id = '$ProductID' ";
+			$consulta = "DELETE FROM products WHERE ProductID = '$ProductID' ";
 			$resultado = $conexion -> prepare($consulta);
 			$resultado -> execute();
 			break;
 		case 4: //Listar
-			$consulta = "SELECT ProductID, ProductName, SupplierID, CategoryID, QuantityPerUnit, UnitPrice, UnitsInStock, UnitsOnOrder, ReoderLevel, Discontinued FROM products";
+			$consulta = "SELECT ProductID, ProductName, SupplierID, CategoryID, QuantityPerUnit, UnitPrice, UnitsInStock, UnitsOnOrder, ReorderLevel, Discontinued FROM products";
 			$resultado = $conexion -> prepare($consulta);
 			$resultado -> execute();
 			$data = $resultado -> fetchAll(PDO::FETCH_ASSOC);

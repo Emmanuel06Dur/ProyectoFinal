@@ -75,9 +75,9 @@
                                 <!-- Navegacion de acerca de -->
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <!-- Link crud Pedro -->
-                                    <a class="nav-link" href="#">Employees</a>
+                                    <a class="nav-link" href="crudemployees.php">Employees</a>
                                     <!-- Link crud Martinez -->
-                                    <a class="nav-link" href="#">Customers</a>
+                                    <a class="nav-link" href="crudcustomers.php">Customers</a>
                                     <!-- Link crud Alexander -->
                                     <a class="nav-link" href="#">Shippers</a>
                                     <!-- Link crud Emmanuel -->
@@ -85,7 +85,7 @@
                                     <!-- Link crud Eliseo -->
                                     <a class="nav-link" href="#">Categories</a>
                                     <!-- Link crud Gaby -->
-                                    <a class="nav-link" href="#">Products</a></nav>
+                                    <a class="nav-link" href="crudproducts.php">Products</a></nav>
                             </div>
                             <!-- Articulos disponibles-->
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
@@ -135,12 +135,12 @@
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">Products</li>
                         </ol>
-                        <div id="appSuppliers">
+                        <div id="appProducts">
                         <div class="col">
                             <button @click="btnAlta" class="btn btn-primary" title="Nuevo"><i class="fas fa-parachute-box"></i>  Añadir Product</button><br><br>
                         </div>
                         <div class="card mb-4">
-                            <div class="card-header"><i class="fas fa-table mr-1"></i>Tabla de Product</div>
+                            <div class="card-header"><i class="fas fa-table mr-1"></i>Tabla de Products</div>
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -154,7 +154,7 @@
                                                 <th>UnitPrice</th>
                                                 <th>UnitsInStock</th>
                                                 <th>UnitsOnOrder</th>
-                                                <th>ReoderLevel</th>
+                                                <th>ReorderLevel</th>
                                                 <th>Discontinued</th>
                                             </tr>
                                         </thead>
@@ -168,11 +168,11 @@
                                                 <td>{{sup.UnitPrice}}</td>
                                                 <td>{{sup.UnitsInStock}}</td>
                                                 <td>{{sup.UnitsOnOrder}}</td>
-                                                <td>{{sup.ReoderLevel}}</td>
+                                                <td>{{sup.ReorderLevel}}</td>
                                                 <td>{{sup.Discontinued}}</td>
                                                 <td>
 									                <div class = "btn-group" role = "group">
-										                <button class = "btn btn-secondary" title = "Editar" @click = "btnEditar()"><i class = "fas fa-pencil-alt"></i></button>
+										                <button class = "btn btn-secondary" title = "Editar" @click = "btnEditar(sup.ProductID, sup.ProductName, sup.SupplierID, sup.CategoryID, sup.QuantityPerUnit, sup.UnitPrice, sup.UnitsInStock, sup.UnitsOnOrder, sup.ReorderLevel, sup.Discontinued)"><i class = "fas fa-pencil-alt"></i></button>
 										                <button class = "btn btn-danger" title = "Eliminar" @click = "btnBorrar(sup.ProductID)"><i class = "fas fa-trash-alt"></i></button>
 									                </div>
 								                </td>
