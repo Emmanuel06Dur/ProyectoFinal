@@ -93,7 +93,7 @@ var appPacientes = new Vue({
             });
         },
         btnBorrar:function(ProductID){
-
+            
             Swal.fire({
                 title: '¿Esta seguro de borrar el registro: ' +ProductID+" ?",
                 type: 'warning',

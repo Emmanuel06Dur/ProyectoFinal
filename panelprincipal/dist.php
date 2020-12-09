@@ -84,7 +84,7 @@
                                     <!-- Link crud Eliseo -->
                                     <a class="nav-link" href="#">Categories</a>
                                     <!-- Link crud Gaby -->
-                                    <a class="nav-link" href="#">Products</a></nav>
+                                    <a class="nav-link" href="../crudshtml/crudproducts.php">Products</a></nav>
                             </div>
                             <!-- Articulos disponibles-->
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
