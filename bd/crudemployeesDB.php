@@ -20,8 +20,6 @@
     $Country = (isset($_POST['Country'])) ? $_POST['Country'] : '';
     $HomePhone = (isset($_POST['HomePhone'])) ? $_POST['HomePhone'] : '';
     $Extension = (isset($_POST['Extension'])) ? $_POST['Extension'] : '';
-    //$Photo = (isset($_FILES['Photo']['tmp_name'])) ? $_FILES['Photo']['tmp_name'] : '';
-    //$Photo = $_FILES['Photo']['name'];
     $Notes = (isset($_POST['Notes'])) ? $_POST['Notes'] : '';
     $ReportsTo = (isset($_POST['ReportsTo'])) ? $_POST['ReportsTo'] : '';
     $PhotoPath = (isset($_POST['PhotoPath'])) ? $_POST['PhotoPath'] : '';
