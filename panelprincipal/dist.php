@@ -103,7 +103,7 @@
                                     </a>
                                     <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
                                         <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="#">Reporte Ordenes por Empleado y Mes</a>
+                                            <a class="nav-link" href="../reportes/reporte1.php">Reporte Ordenes por Empleado y Mes</a>
                                             <a class="nav-link" href="../reportes/reporte2.php">Reporte Cantidad de Productos Ordenados</a>
                                         </nav>
                                     </div>

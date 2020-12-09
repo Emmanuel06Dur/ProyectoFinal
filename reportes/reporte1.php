@@ -1,3 +1,36 @@
+<?php
+	if(isset($_POST['submit']))
+	{
+		include_once "../bd/conexion.php";
+		$objeto = new Conexion();
+		$conexion = $objeto -> Conectar();
+
+		$año = $_POST['añodate'];
+		$mes = $_POST['mesdate'];
+
+		$consulta = "SELECT e.employeeid, e.title,
+				concat(e.firstname, ' ', e.lastname) as empleado,
+				e.country,
+				(
+					select count(*) from orders o
+					where o.employeeid=e.employeeid and year(o.orderdate)='$año' and month(o.orderdate)='$mes'
+				) Cantidad,
+				(
+					select round(sum(od.quantity*od.unitprice), 2) from orders o join `order details` od
+					on od.orderid=o.orderid
+					where o.employeeid = e.employeeid
+					and year(o.orderdate)='$año' and month(o.orderdate)='$mes'
+				) Monto
+				from employees e
+				order by monto desc;";
+		$resultado = $conexion -> prepare($consulta);
+		$resultado -> execute();
+		$data = $resultado -> fetchAll(PDO::FETCH_ASSOC);
+		print json_encode ($data, JSON_UNESCAPED_UNICODE);
+		//foreach ($conexion->query($data) as $row);
+    	$conexion = NULL;
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -6,7 +39,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <link rel="icon" type="image/png" href="../img/inventario.png">
-        <title>Employees // NWIND</title>
+        <title>Reporte de ordenes por empleado // NWIND</title>
         
         <link href="../panelprincipal/css/styles.css" rel="stylesheet" />
         <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
@@ -75,18 +108,17 @@
                                 <!-- Navegacion de acerca de -->
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <!-- Link crud Pedro -->
-                                    <a class="nav-link" href="crudemployees.php">Employees</a>
+                                    <a class="nav-link" href="../crudshtml/crudemployees.php">Employees</a>
                                     <!-- Link crud Martinez -->
-                                    <a class="nav-link" href="crudcustomers.php">Customers</a>
+                                    <a class="nav-link" href="../crudshtml/crudcustomers.php">Customers</a>
                                     <!-- Link crud Alexander -->
                                     <a class="nav-link" href="#">Shippers</a>
                                     <!-- Link crud Emmanuel -->
-                                    <a class="nav-link" href="crudsuppliers.php">Suppliers</a>
+                                    <a class="nav-link" href="../crudshtml/crudsuppliers.php">Suppliers</a>
                                     <!-- Link crud Eliseo -->
                                     <a class="nav-link" href="#">Categories</a>
                                     <!-- Link crud Gaby -->
-                                    <a class="nav-link" href="crudproducts.php">Products</a>
-                                </nav>
+                                    <a class="nav-link" href="#">Products</a></nav>
                             </div>
                             <!-- Articulos disponibles-->
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
@@ -130,66 +162,52 @@
 			<div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4">Cruds/ Employees</h1>
+                        <h1 class="mt-4">Reportes/ Reporte de ordenes por empleado</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Employees</li>
+                            <li class="breadcrumb-item active">Reporte 1</li>
                         </ol>
                         <div id="appEmployees">
-                        <div class="col">
-                            <button @click="btnAlta" class="btn btn-primary" title="Nuevo"><i class="fas fa-user-tie"></i>  Añadir Employee</button><br><br>
-                        </div>
+                        <form action="<?php htmlspecialchars($_SERVER['PHP_SELF'])?>" method="POST" class="form-inline">
+                        	Año: <input type="number" name="añodate" value="1996" min="1996" class="form-control" width="200"> 
+                        	Mes: 
+                        	<select name="mesdate" class="custom-select mr-sm-2">
+                        		<option value="01" selected>Enero</option>
+                        		<option value="02">Febrero</option>
+                        		<option value="03">Marzo</option>
+                        		<option value="04">Abril</option>
+                        		<option value="05">Mayo</option>
+                        		<option value="06">Junio</option>
+                        		<option value="07">Julio</option>
+                        		<option value="08">Agosto</option>
+                        		<option value="09">Septiembre</option>
+                        		<option value="10">Octubre</option>
+                        		<option value="11">Noviembre</option>
+                        		<option value="12">Diciembre</option>
+                        	</select>
+                            <button class="btn btn-primary" title="Nuevo" type="submit"><i class="fas fa-search"></i> Buscar Consulta</button><br><br>
+                        </form><br>
                         <div class="card mb-4">
-                            <div class="card-header"><i class="fas fa-table mr-1"></i>Tabla de Employees</div>
+                            <div class="card-header"><i class="fas fa-table mr-1"></i>Tabla de Reporte 1</div>
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
                                                 <th>EmployeeID</th>
-                                                <th>LastName</th>
-                                                <th>FirstName</th>
                                                 <th>Title</th>
-                                                <th>TitleOfCourtesy</th>
-                                                <th>BirthDate</th>
-                                                <th>HireDate</th>
-                                                <th>Ubication</th>
-                                                <th>City</th>
-                                                <th>Region</th>
-                                                <th>PostalCode</th>
+                                                <th>Empleado</th>
                                                 <th>Country</th>
-                                                <th>HomePhone</th>
-                                                <th>Extension</th>
-                                                <th>Notes</th>
-                                                <th>ReportsTo</th>
-                                                <th>PhotoPath</th>
-                                                <th>Acciones</th>
+                                                <th>Cantidad</th>
+                                                <th>Monto</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr v-for = "(emp, indice) of employees">
-                                                <td>{{emp.EmployeeID}}</td>
-                                                <td>{{emp.LastName}}</td>
-                                                <td>{{emp.FirstName}}</td>
-                                                <td>{{emp.Title}}</td>
-                                                <td>{{emp.TitleOfCourtesy}}</td>
-                                                <td>{{emp.BirthDate}}</td>
-                                                <td>{{emp.HireDate}}</td>
-                                                <td>{{emp.Ubication}}</td>
-                                                <td>{{emp.City}}</td>
-                                                <td>{{emp.Region}}</td>
-                                                <td>{{emp.PostalCode}}</td>
-                                                <td>{{emp.Country}}</td>
-                                                <td>{{emp.HomePhone}}</td>
-                                                <td>{{emp.Extension}}</td>
-                                                <td>{{emp.Notes}}</td>
-                                                <td>{{emp.ReportsTo}}</td>
-                                                <td>{{emp.PhotoPath}}</td>
-                                                <td>
-									                <div class = "btn-group" role = "group">
-										                <button class = "btn btn-secondary" title = "Editar" @click = "btnEditar(emp.EmployeeID, emp.LastName, emp.FirstName, emp.Title, emp.TitleOfCourtesy, emp.BirthDate, emp.HireDate, emp.Ubication, emp.City, emp.Region, emp.PostalCode, emp.Country, emp.HomePhone, emp.Extension, emp.Notes, emp.ReportsTo, emp.PhotoPath)"><i class = "fas fa-pencil-alt"></i></button>
-										                <button class = "btn btn-danger" title = "Eliminar" @click = "btnBorrar(emp.EmployeeID)"><i class = "fas fa-trash-alt"></i></button>
-									                </div>
-								                </td>
+                                                <td><?php echo $data['EmployeeID'];?></td>
+                                                <td><?php echo $data['Title'];?></td>
+                                                <td><?php echo $data['Empleado'];?></td>
+                                                <td><?php echo $data['Country'];?></td>
+                                                <td><?php echo $data['Cantidad'];?></td>
+                                                <td><?php echo $data['Monto'];?></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -217,8 +235,7 @@
 
         </div>
 
-
-		<!-- JQuery, Popper -->
+            <!-- JQuery, Popper -->
         <script src = "../jquery/jquery-3.5.0.min.js"></script>
         <script src = "../popper/popper.min.js"></script>
         
@@ -230,7 +247,7 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
         <!-- maincrud.js -->
-        <script src="../javascript/crudemployees.js"></script>
+        <!-- <script src="../javascript/reporte1.js"></script> -->
         
         <!-- Librerias de diseño -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
