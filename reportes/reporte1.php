@@ -1,35 +1,7 @@
 <?php
-	if(isset($_POST['submit']))
-	{
-		include_once "../bd/conexion.php";
-		$objeto = new Conexion();
-		$conexion = $objeto -> Conectar();
-
-		$año = $_POST['añodate'];
-		$mes = $_POST['mesdate'];
-
-		$consulta = "SELECT e.employeeid, e.title,
-				concat(e.firstname, ' ', e.lastname) as empleado,
-				e.country,
-				(
-					select count(*) from orders o
-					where o.employeeid=e.employeeid and year(o.orderdate)='$año' and month(o.orderdate)='$mes'
-				) Cantidad,
-				(
-					select round(sum(od.quantity*od.unitprice), 2) from orders o join `order details` od
-					on od.orderid=o.orderid
-					where o.employeeid = e.employeeid
-					and year(o.orderdate)='$año' and month(o.orderdate)='$mes'
-				) Monto
-				from employees e
-				order by monto desc;";
-		$resultado = $conexion -> prepare($consulta);
-		$resultado -> execute();
-		$data = $resultado -> fetchAll(PDO::FETCH_ASSOC);
-		print json_encode ($data, JSON_UNESCAPED_UNICODE);
-		//foreach ($conexion->query($data) as $row);
-    	$conexion = NULL;
-    }
+	include_once "../bd/conexion.php";
+	$objeto = new Conexion();
+	$conexion = $objeto -> Conectar();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -167,10 +139,10 @@
                             <li class="breadcrumb-item active">Reporte 1</li>
                         </ol>
                         <div id="appEmployees">
-                        <form action="<?php htmlspecialchars($_SERVER['PHP_SELF'])?>" method="POST" class="form-inline">
-                        	Año: <input type="number" name="añodate" value="1996" min="1996" class="form-control" width="200"> 
+                        <form method="POST" class="form-inline">
+                        	Año: <input type="number" name="añodate" value="1996" min="1996" class="form-control" width="200" required> 
                         	Mes: 
-                        	<select name="mesdate" class="custom-select mr-sm-2">
+                        	<select name="mesdate" class="custom-select mr-sm-2" required>
                         		<option value="01" selected>Enero</option>
                         		<option value="02">Febrero</option>
                         		<option value="03">Marzo</option>
@@ -202,13 +174,38 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                                <td><?php echo $data['EmployeeID'];?></td>
-                                                <td><?php echo $data['Title'];?></td>
-                                                <td><?php echo $data['Empleado'];?></td>
-                                                <td><?php echo $data['Country'];?></td>
-                                                <td><?php echo $data['Cantidad'];?></td>
-                                                <td><?php echo $data['Monto'];?></td>
-                                            </tr>
+                                        	<?php	
+												$año =  (isset($_POST['añodate'])) ? $_POST['añodate'] : '';
+												$mes =  (isset($_POST['mesdate'])) ? $_POST['mesdate'] : '';
+										
+												$consulta = "SELECT e.employeeid, e.title,
+														concat(e.firstname, ' ', e.lastname) as empleado,
+														e.country,
+														(
+															select count(*) from orders o
+															where o.employeeid=e.employeeid and year(o.orderdate)='{$año}' and month(o.orderdate)='{$mes}'
+														) as cantidad,
+														(
+															select round(sum(od.quantity*od.unitprice - od.quantity*od.unitprice*od.Discount), 2) from orders o join `order details` od
+														on od.orderid=o.orderid
+														where o.employeeid = e.employeeid
+														and year(o.orderdate)='{$año}' and month(o.orderdate)='{$mes}'
+														) as monto
+														from employees e
+														order by monto desc";
+												$resultado = $conexion -> query($consulta);
+												while($data=$resultado -> fetch(PDO::FETCH_ASSOC))
+												{
+													echo "<tr>
+													<td>".$data['employeeid']."</td>
+                                                	<td>".$data['title']."</td>
+                                                	<td>".$data['empleado']."</td>
+                                                	<td>".$data['country']."</td>
+                                                	<td>".$data['cantidad']."</td>
+                                                	<td>".$data['monto']."</td>
+                                                	</tr>";
+                                                }		
+											?>
                                         </tbody>
                                     </table>
                                 </div>
