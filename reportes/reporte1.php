@@ -159,7 +159,12 @@
                             <button class="btn btn-primary" title="Nuevo" type="submit"><i class="fas fa-search"></i> Buscar Consulta</button><br><br>
                         </form><br>
                         <div class="card mb-4">
-                            <div class="card-header"><i class="fas fa-table mr-1"></i>Tabla de Reporte 1</div>
+                            <div class="card-header"><i class="fas fa-table mr-1"></i>Tabla de Reporte 1 - 
+                            <?php 
+                            	$año =  (isset($_POST['añodate'])) ? $_POST['añodate'] : '';
+								$mes =  (isset($_POST['mesdate'])) ? $_POST['mesdate'] : '';
+								echo "Año (".$año.") del mes (".$mes.")";
+							?></div>
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
