@@ -54,7 +54,8 @@
                 <input type="button" class="btn btn-outline-success my-2 my-sm-0" onclick="" value="IR">
             </form>
         </div>
-    </nav>
-
+    </nav><br><br><br><br>
+    <p class="texto">Northwind es una base de una base de microsoft proporciona como ejemplo y puede ser descargada en la web oficial de microsoft. Durante el desarrollo de sql 2000 el equipo de desarrolladores de microsoft había creado su lenguaje de búsquedas estructurado Transact-Sql, junto a su nueva base de datos la cual llamaron Northwind, mediante el uso de su Transact-Sql Northwind tambien podía ser creado. Northwind era una base de datos mucho mejor que Pubs ya que además aparecía en la documentación de Access y esta base de datos podía ilustrar muchas nuevas características que poseía el nuevo sql.<br><br> En el momento en que se lanzó SQL Server 2000, gran parte de la documentación de SQL Server todavía hace referencia a pubs. Es por eso que ambas bases de datos se envían en un solo producto. Ya planeando las características para SQL, los equipos de inteligencia de negocios (BI) se sintieron rápidamente decepcionados por la falta de tamaño y complejidad en Pubs y Northwind. Para mostrar las características de Integration Services y Analysis Services, se necesitaría una base de datos de ejemplo de "mundo real".<br><br>Northwind simula una base de datos de una empresa de pedidos de diferentes productos y sus clientes.</p><br>
+    <center><img src="img/nwind.jpg" alt=""></center>
 </body>
 </html>
