@@ -1,3 +1,8 @@
+<?php
+    include_once "../bd/conexion.php";
+    $objeto = new Conexion();
+    $conexion = $objeto -> Conectar();
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -79,7 +84,7 @@
                                     <!-- Link crud Martinez -->
                                     <a class="nav-link" href="../crudshtml/crudcustomers.php">Customers</a>
                                     <!-- Link crud Alexander -->
-                                    <a class="nav-link" href="#">Shippers</a>
+                                    <a class="nav-link" href="../crudshtml/crudshippers.php">Shippers</a>
                                     <!-- Link crud Emmanuel -->
                                     <a class="nav-link" href="../crudshtml/crudsuppliers.php">Suppliers</a>
                                     <!-- Link crud Eliseo -->
@@ -104,8 +109,8 @@
                                     </a>
                                     <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
                                         <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="#">Reporte de Ordenes por Empleado y Mes</a>
-                                            <a class="nav-link" href="../reportes/reporte2.php">Reporte Cantidad de Productos Ordenados</a>
+                                            <a class="nav-link" href="reporte1.php">Reporte de Ordenes por Empleado y Mes</a>
+                                            <a class="nav-link" href="reporte2.php">Reporte Cantidad de Productos Ordenados</a>
                                         </nav>
                                     </div>
                                 </nav>
@@ -135,12 +140,12 @@
                             <li class="breadcrumb-item active">Reportes / Reporte II</li>
                         </ol>
                         <div id="appProducts">
-                        <div class="col">
+                        <form method="POST">
                             Inserte los datos que se piden para realizar el reporte correspondiente.<br><br>
-                            <strong>Fecha Inicial:</strong> <input id="fechainicial" type="date" class="form-control"><br>
-                            <strong>Fecha Final:</strong> <input id="fechafinal" type="date" class="form-control"><br>
+                            <strong>Fecha Inicial: </strong> <input name="fechainicial" type="date" class="form-control"><br>
+                            <strong>Fecha Final: </strong> <input name="fechafinal" type="date" class="form-control"><br>
                             <strong>Clave de la categoria: </strong> 
-                            <select id="categoria" class="form-select">
+                            <select name="categoria" class="form-select">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -156,10 +161,18 @@
                                 <option value="13">13</option>
                                 <option value="14">14</option>
                             </select>
-                            <button @click="btnMostrar" class="btn btn-primary" title="Nuevo"><i class="fas fa-hand-point-right"></i>  Enviar Consulta</button><br><br>
-                        </div>
+                            <br>
+                            <br>
+                            <button class="btn btn-primary" title="Nuevo" type="submit"><i class="fas fa-hand-point-right"></i>  Enviar Consulta</button><br><br>
+                        </form>
                         <div class="card mb-4">
-                            <div class="card-header"><i class="fas fa-table mr-1"></i>Resultado de la consulta</div>
+                            <div class="card-header"><i class="fas fa-table mr-1"></i>Tabla de Reporte 2 - 
+                            <?php 
+                                $fechainicial = (isset($_POST['fechainicial'])) ? $_POST['fechainicial'] : '';
+                                $fechafinal = (isset($_POST['fechafinal'])) ? $_POST['fechafinal'] : '';
+                                $categoria = (isset($_POST['categoria'])) ? $_POST['categoria'] : '';
+                                echo "Fecha inicial (".$fechainicial."), fecha final (".$fechafinal.") y la categoria es (".$categoria.")";
+                            ?></div>
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -175,15 +188,33 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr v-for = "(pro, indice) of products">
-                                                <td>{{pro.productid}}</td>
-                                                <td>{{pro.productname}}</td>
-                                                <td>{{pro.unitprice}}</td>
-                                                <td>{{pro.unitsinstock}}</td>
-                                                <td>{{pro.CategoryName}}</td>
-                                                <td>{{pro.Cantidad}}</td>
-                                                <td>{{pro.Monto}}</td>
-                                            </tr>
+                                            <?php   
+                                                $fechainicial = (isset($_POST['fechainicial'])) ? $_POST['fechainicial'] : '';
+                                                $fechafinal = (isset($_POST['fechafinal'])) ? $_POST['fechafinal'] : '';
+                                                $categoria = (isset($_POST['categoria'])) ? $_POST['categoria'] : '';
+                                        
+                                                $consulta = "SELECT p.productid, p.productname, p.unitprice, p.unitsinstock, c.CategoryName,
+                                                    (
+                                                        SELECT COUNT(*) FROM `order details` od JOIN orders o ON o.OrderID=od.OrderId WHERE p.ProductID=od.productID AND o.OrderDate BETWEEN '{$fechainicial}' AND '{$fechafinal}'
+                                                    ) as Cantidad,
+                                                    (
+                                                        SELECT ROUND(sum(od.UnitPrice*od.Quantity-od.UnitPrice*od.Quantity*od.Discount),2) FROM `order details` od JOIN orders o ON o.OrderID=od.OrderID WHERE p.ProductID=od.ProductID AND o.OrderDate BETWEEN '{$fechainicial}' AND '{$fechafinal}'
+                                                    ) as Monto 
+                                                    FROM products p JOIN categories c ON p.CategoryID=c.CategoryID WHERE c.CategoryID='{$categoria}' ORDER BY cantidad desc";
+                                                $resultado = $conexion -> query($consulta);
+                                                while($data=$resultado -> fetch(PDO::FETCH_ASSOC))
+                                                {
+                                                    echo "<tr>
+                                                    <td>".$data['productid']."</td>
+                                                    <td>".$data['productname']."</td>
+                                                    <td>".$data['unitprice']."</td>
+                                                    <td>".$data['unitsinstock']."</td>
+                                                    <td>".$data['CategoryName']."</td>
+                                                    <td>".$data['Cantidad']."</td>
+                                                    <td>".$data['Monto']."</td>
+                                                    </tr>";
+                                                }       
+                                            ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -220,9 +251,6 @@
         <script src = "https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.2/axios.js"></script>
         <!-- Sweetalert -->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-
-        <!-- maincrud.js -->
-        <script src="../javascript/reporte2.js"></script>
         
         <!-- Librerias de diseño -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
