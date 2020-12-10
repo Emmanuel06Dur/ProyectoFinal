@@ -81,7 +81,7 @@
                                     <!-- Link crud Emmanuel -->
                                     <a class="nav-link" href="crudsuppliers.php">Suppliers</a>
                                     <!-- Link crud Eliseo -->
-                                    <a class="nav-link" href="#">Categories</a>
+                                    <a class="nav-link" href="Categories.php">Categories</a>
                                     <!-- Link crud Gaby -->
                                     <a class="nav-link" href="crudproducts.php">Products</a></nav>
                             </div>

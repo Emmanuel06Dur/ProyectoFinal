@@ -134,12 +134,12 @@
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">Categories</li>
                         </ol>
-                        <div id="appMoviles">
+                        <div id="appCategories">
                         <div class="col">
                             <button @click="btnAlta" class="btn btn-primary" title="Nuevo"><i class="fas fa-parachute-box"></i>  Añadir Categorie</button><br><br>
                         </div>
                         <div class="card mb-4">
-                            <div class="card-header"><i class="fas fa-table mr-1"></i>Tabla de Suppliers</div>
+                            <div class="card-header"><i class="fas fa-table mr-1"></i>Tabla de Categories</div>
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -147,7 +147,7 @@
                                             <tr>
                                                 <th>CategoryID</th>
                                                 <th>CategoryName</th>
-                                                <th>Description</th>
+                                                <th>Texto</th>
                                                 <th>Acciones</th>
                                             </tr>
                                         </thead>
@@ -155,10 +155,10 @@
                                             <tr v-for = "(cat, indice) of categories">
                                                 <td>{{cat.CategoryID}}</td>
                                                 <td>{{cat.CategoryName}}</td>
-                                                <td>{{cat.Description}}</td>
+                                                <td>{{cat.Texto}}</td>
                                                 <td>
 									                <div class = "btn-group" role = "group">
-										                <button class = "btn btn-secondary" title = "Editar" @click = "btnEditar(cat.CategoryId, cat.CategoryName, cat.Description)"><i class = "fas fa-pencil-alt"></i></button>
+										                <button class = "btn btn-secondary" title = "Editar" @click = "btnEditar(cat.CategoryID, cat.CategoryName, cat.Texto)"><i class = "fas fa-pencil-alt"></i></button>
 										                <button class = "btn btn-danger" title = "Eliminar" @click = "btnBorrar(cat.CategoryID)"><i class = "fas fa-trash-alt"></i></button>
 									                </div>
 								                </td>
@@ -201,7 +201,7 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
         <!-- maincrud.js -->
-        <script src="../javascript/crudsuppliers.js"></script>
+        <script src="../javascript/categories.js"></script>
         
         <!-- Librerias de diseño -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>

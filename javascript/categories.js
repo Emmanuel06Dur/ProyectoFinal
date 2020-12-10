@@ -1,13 +1,11 @@
 var url = '../bd/crudcategories.php';
-
 var appMoviles = new Vue({
-  el: '#appMoviles',
+  el: '#appCategories',
   data:{
-    moviles:[],
+    categories:[],
     CategoryID:"",
     CategoryName:"",
-    Description:"",
-
+    Description:""
   },
   methods:{
     //BOTONES
@@ -98,16 +96,16 @@ var appMoviles = new Vue({
     },
     //PROCEDIMIENTOS
     //Procedimiento Listar
-    listarMoviles:function(){
+    listarCategories:function(){
       axios.post(url, {opcion:4}).then(response =>{
-        this.moviles = response.data;
+        this.categories = response.data;
         //console.log(this.moviles);
       });
     },
     //Procedimiento CREAR
     altaMovil:function(){
       axios.post(url, {opcion:1, CategoryName:this.CategoryName, Description:this.Description}).then(response =>{
-        this.listarMoviles();
+        this.listarCategories();
       });
       this.CategoryName = "";
       this.Description = "";
@@ -116,19 +114,19 @@ var appMoviles = new Vue({
     //Procedimieto EDITAR
     editarMovil:function(CategoryID, CategoryName, Description){
       axios.post(url, {opcion:2, CategoryID:CategoryID, CategoryName:CategoryName, Description:Description}).then(response =>{
-        this.listarMoviles();
+        this.listarCategories();
       });
     },
 
     //Procedimiento BORRAR
     borrarMovil:function(CategoryID){
       axios.post(url, {opcion:3, CategoryID:CategoryID}).then(response =>{
-        this.listarMoviles();
+        this.listarCategories();
       });
     }
   },
   created: function(){
-    this.listarMoviles();
+    this.listarCategories();
   },
   
   computed:{
