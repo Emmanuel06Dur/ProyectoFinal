@@ -59,9 +59,7 @@
                             <a class="nav-link" href="../panelprincipal/dist.php"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Registro de Ordenes
-                            </a><a class="nav-link" href="#"
-                                ><div class="sb-nav-link-icon"><i class="fas fa-dice"></i></div>
-                                Detalles</a>
+                            </a>
 
                             <div class="sb-sidenav-menu-heading">Datos</div>
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
@@ -75,17 +73,17 @@
                                 <!-- Navegacion de acerca de -->
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <!-- Link crud Pedro -->
-                                    <a class="nav-link" href="#">Employees</a>
+                                    <a class="nav-link" href="crudemployees.php">Employees</a>
                                     <!-- Link crud Martinez -->
-                                    <a class="nav-link" href="#">Customers</a>
+                                    <a class="nav-link" href="crudcustomers.php">Customers</a>
                                     <!-- Link crud Alexander -->
-                                    <a class="nav-link" href="#">Shippers</a>
+                                    <a class="nav-link" href="crudshippers.php">Shippers</a>
                                     <!-- Link crud Emmanuel -->
                                     <a class="nav-link" href="crudsuppliers.php">Suppliers</a>
                                     <!-- Link crud Eliseo -->
                                     <a class="nav-link" href="#">Categories</a>
                                     <!-- Link crud Gaby -->
-                                    <a class="nav-link" href="#">Products</a></nav>
+                                    <a class="nav-link" href="crudproducts.php">Products</a></nav>
                             </div>
                             <!-- Articulos disponibles-->
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
@@ -99,14 +97,13 @@
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                    Principales Reportes
+                                    Reportes Principales
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
                                     <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
                                         <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="#">Reporte I</a>
-                                            <a class="nav-link" href="#">Reporte II</a>
-                                            <a class="nav-link" href="#">Reporte III</a>
+                                            <a class="nav-link" href="../reportes/reporte1.php">Reporte de Ordenes por Empleado y Mes</a>
+                                            <a class="nav-link" href="../reportes/reporte2.php">Reporte Cantidad de Productos Ordenados</a>
                                         </nav>
                                     </div>
                                 </nav>
@@ -121,7 +118,7 @@
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small">Editado y programado por:</div>
-                        Equipo 3
+                        Equipo 2
                     </div>
                 </nav>
             </div>

@@ -1,5 +1,4 @@
 <?php
-	
 	include_once "conexion.php";
 	$objeto = new Conexion();
 	$conexion = $objeto->Conectar();
@@ -15,13 +14,13 @@
     $Description = (isset($_POST['Description'])) ? $_POST['Description'] : '';
 	switch($opcion){
 		case 1://Alta o Insertamos nuevo registro
-			$consulta = "INSERT INTO categories (CategoryName, Description) VALUES ('$CategoryName', '$Description')";
+			$consulta = "INSERT INTO categories (CategoryName, Texto) VALUES ('$CategoryName', '$Description')";
 			$resultado = $conexion->prepare($consulta);
 			$resultado->execute();
 			break;
 
 		case 2://Modificación
-			$consulta = "UPDATE categories SET CategoryName='$CategoryName', Description='$Description' WHERE CategoryID = '$CategoryID' ";
+			$consulta = "UPDATE categories SET CategoryName='$CategoryName', Texto='$Description' WHERE CategoryID = '$CategoryID' ";
 			$resultado = $conexion->prepare($consulta);
 			$resultado->execute();
 			$data=$resultado->fetchAll(PDO::FETCH_ASSOC);
@@ -34,7 +33,7 @@
 			break;
 
 		case 4://Listar
-			$consulta = "SELECT * FROM categories";
+			$consulta = "SELECT CategoryID, CategoryName, Texto FROM categories";
 			$resultado = $conexion->prepare($consulta);
 			$resultado->execute();
 			$data=$resultado->fetchAll(PDO::FETCH_ASSOC);

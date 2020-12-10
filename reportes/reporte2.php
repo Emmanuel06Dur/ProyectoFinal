@@ -64,9 +64,7 @@
                             <a class="nav-link" href="../panelprincipal/dist.php"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Registro de Ordenes
-                            </a><a class="nav-link" href="#"
-                                ><div class="sb-nav-link-icon"><i class="fas fa-dice"></i></div>
-                                Detalles</a>
+                            </a>
 
                             <div class="sb-sidenav-menu-heading">Datos</div>
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">

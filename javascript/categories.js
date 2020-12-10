@@ -1,4 +1,4 @@
-var url = 'bd/crudcategories.php';
+var url = '../bd/crudcategories.php';
 
 var appMoviles = new Vue({
   el: '#appMoviles',
